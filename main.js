@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import App from './App'
 
+import homepage from './pages/home_page/home.vue'
+Vue.component('homepage',homepage)
+
+import aboutpage from './pages/home_page/about/about.vue'
+Vue.component('aboutpage',aboutpage)
+
 import basics from './pages/basics/home.vue'
 Vue.component('basics',basics)
 
