@@ -1,11 +1,17 @@
 import Vue from 'vue'
 import App from './App'
 
-import ctmainpage from './pages/main_page/home.vue'
+import ctmainpage from './pages/main_page/home/home.vue'
 Vue.component('ctmainpage',ctmainpage)
 
 import ctaboutpage from './pages/main_page/about/about.vue'
 Vue.component('ctaboutpage',ctaboutpage)
+
+import ctsearch from './pages/main_page/search/search.vue'
+Vue.component('ctsearch',ctsearch)
+
+import ctmy from './pages/main_page/my/my.vue'
+Vue.component('ctmy',ctmy)
 
 import basics from './pages/basics/home.vue'
 Vue.component('basics',basics)

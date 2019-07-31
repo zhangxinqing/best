@@ -2,6 +2,8 @@
 	<view>
 		<ctmainpage v-if="PageCur=='homepage'"></ctmainpage>
 		<ctaboutpage v-if="PageCur=='aboutpage'"></ctaboutpage>
+		<ctsearch v-if="PageCur=='searchpage'"></ctsearch>
+		<ctmy v-if="PageCur=='mypage'"></ctmy>
 		<view class="cu-bar tabbar bg-black shadow foot">
 			<view :class="PageCur=='homepage'?'action text-orange':'action'" @click="NavChange" data-cur="homepage">
 				<view class="cuIcon-homefill"></view> 首页

@@ -10,6 +10,14 @@
 		    "style" : {}
 		},
 		{
+		    "path" : "pages/main_page/search/search",
+		    "style" : {}
+		},
+		{
+		    "path" : "pages/main_page/my/my",
+		    "style" : {}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {}
 		},
@@ -110,6 +118,14 @@
 			"style": {}
 		}
         
+        ,{
+            "path" : "pages/main_page/search/search",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/main_page/my/my",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {
