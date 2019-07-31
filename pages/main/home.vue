@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<homepage v-if="PageCur=='homepage'"></homepage>
-		<aboutpage v-if="PageCur=='aboutpage'"></aboutpage>
+		<ctmainpage v-if="PageCur=='homepage'"></ctmainpage>
+		<ctaboutpage v-if="PageCur=='aboutpage'"></ctaboutpage>
 		<view class="cu-bar tabbar bg-black shadow foot">
 			<view :class="PageCur=='homepage'?'action text-orange':'action'" @click="NavChange" data-cur="homepage">
 				<view class="cuIcon-homefill"></view> 首页

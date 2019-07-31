@@ -2,8 +2,12 @@
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/home/home",
+			"path": "pages/main/home",
 			"style": {}
+		},
+		{
+		    "path" : "pages/main_page/about/about",
+		    "style" : {}
 		},
 		{
 			"path": "pages/index/index",
@@ -105,10 +109,7 @@
 			"path": "pages/plugin/verticalnav",
 			"style": {}
 		}
-        ,{
-            "path" : "pages/home_page/about/about",
-            "style" : {}
-        }
+        
     ],
 	"globalStyle": {
 		"mp-alipay": {

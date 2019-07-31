@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import App from './App'
 
-import homepage from './pages/home_page/home.vue'
-Vue.component('homepage',homepage)
+import ctmainpage from './pages/main_page/home.vue'
+Vue.component('ctmainpage',ctmainpage)
 
-import aboutpage from './pages/home_page/about/about.vue'
-Vue.component('aboutpage',aboutpage)
+import ctaboutpage from './pages/main_page/about/about.vue'
+Vue.component('ctaboutpage',ctaboutpage)
 
 import basics from './pages/basics/home.vue'
 Vue.component('basics',basics)
