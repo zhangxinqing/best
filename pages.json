@@ -10,7 +10,7 @@
 		    "style" : {}
 		},
 		{
-		    "path" : "pages/main_page/search/search",
+		    "path" : "pages/main_page/post/post",
 		    "style" : {}
 		},
 		{
@@ -124,6 +124,10 @@
         }
         ,{
             "path" : "pages/main_page/my/my",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/main_page/search/search",
             "style" : {}
         }
     ],

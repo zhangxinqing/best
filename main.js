@@ -7,8 +7,8 @@ Vue.component('ctmainpage',ctmainpage)
 import ctaboutpage from './pages/main_page/about/about.vue'
 Vue.component('ctaboutpage',ctaboutpage)
 
-import ctsearch from './pages/main_page/search/search.vue'
-Vue.component('ctsearch',ctsearch)
+import ctpost from './pages/main_page/post/post.vue'
+Vue.component('ctpost',ctpost)
 
 import ctmy from './pages/main_page/my/my.vue'
 Vue.component('ctmy',ctmy)
