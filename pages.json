@@ -130,6 +130,10 @@
             "path" : "pages/main_page/search/search",
             "style" : {}
         }
+        ,{
+            "path" : "pages/main_page/myset/myset",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"mp-alipay": {

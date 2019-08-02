@@ -13,7 +13,7 @@
 					<view class="cu-bar bg-shadeBottom"> 
 					<text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
 					<text class="lg text-gray cuIcon-qrcode"></text>
-					<text class="lg text-gray cuIcon-right"></text>
+					<text class="lg text-gray cuIcon-right" @tap="myset"></text>
 					</view>
 				</view>
 				<view class="cu-list menu-avatar">
@@ -162,6 +162,9 @@
 			tabSelect(e) {
 				this.TabCur = e.currentTarget.dataset.id;
 				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
+			},
+			myset(e){
+				
 			}
 		},
 	}
