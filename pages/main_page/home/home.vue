@@ -1,16 +1,9 @@
 <template>
 	<view>
-		<view class="cu-bar bg-white">
-			<view class="action">
-				<text class="cuIcon-homefill text-gray"></text>
-				首页
-			</view>
-			<view class="content text-bold">鲜亮的高饱和色彩，专注视觉的小程序组件库</view>
-			<view class="action">
-				<text class="cuIcon-cardboardfill text-grey" @tap="LoadProgress"></text>
-				<text class="cuIcon-recordfill text-red"></text>
-			</view>
-		</view>
+		<cu-custom bgColor="bg-gradual-orange" :isBack="false">
+			<block slot="backText">返回</block>
+			<block slot="content">首页</block>
+		</cu-custom>
 		<swiper
 			class="card-swiper"
 			:class="dotStyle ? 'square-dot' : 'round-dot'"

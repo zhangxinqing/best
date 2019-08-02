@@ -1,5 +1,9 @@
 <template>
 	<view>
+		<cu-custom bgColor="bg-gradual-orange" :isBack="false">
+			<block slot="backText">返回</block>
+			<block slot="content">我的</block>
+		</cu-custom>
 		<view class="cu-card case" :class="isCard?'no-card':''">
 			<view class="cu-item shadow">
 				<view class="image">

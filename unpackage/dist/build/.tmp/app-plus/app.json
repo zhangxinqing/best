@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/main/home",
+    "pages/main_page/about/about",
+    "pages/main_page/post/post",
+    "pages/main_page/my/my",
+    "pages/index/index",
+    "pages/basics/layout",
+    "pages/basics/background",
+    "pages/basics/text",
+    "pages/basics/icon",
+    "pages/basics/button",
+    "pages/basics/design",
+    "pages/basics/tag",
+    "pages/basics/avatar",
+    "pages/basics/progress",
+    "pages/basics/shadow",
+    "pages/basics/loading",
+    "pages/component/bar",
+    "pages/component/nav",
+    "pages/component/list",
+    "pages/component/card",
+    "pages/component/form",
+    "pages/component/timeline",
+    "pages/component/chat",
+    "pages/component/swiper",
+    "pages/component/modal",
+    "pages/component/steps",
+    "pages/plugin/indexes",
+    "pages/plugin/animation",
+    "pages/plugin/drawer",
+    "pages/plugin/verticalnav",
+    "pages/main_page/search/search",
+    "pages/main_page/my/my",
+    "pages/main_page/search/search"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0081ff",
+    "navigationBarTitleText": "ColorUi for UniApp",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "nvueCompiler": "weex",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "test",
+  "compilerVersion": "2.1.4",
+  "usingComponents": {
+    "ctmainpage": "/pages/main_page/home/home",
+    "ctaboutpage": "/pages/main_page/about/about",
+    "ctpost": "/pages/main_page/post/post",
+    "ctmy": "/pages/main_page/my/my",
+    "basics": "/pages/basics/home",
+    "components": "/pages/component/home",
+    "plugin": "/pages/plugin/home",
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

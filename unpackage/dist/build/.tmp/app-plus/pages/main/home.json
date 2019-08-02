@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "ctmainpage": "/pages/main_page/home/home",
+    "ctaboutpage": "/pages/main_page/about/about",
+    "ctpost": "/pages/main_page/post/post",
+    "ctmy": "/pages/main_page/my/my"
+  }
+}
