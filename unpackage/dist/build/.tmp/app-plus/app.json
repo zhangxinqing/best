@@ -4,6 +4,7 @@
     "pages/main_page/about/about",
     "pages/main_page/post/post",
     "pages/main_page/my/my",
+    "pages/main_page/myset/myset",
     "pages/index/index",
     "pages/basics/layout",
     "pages/basics/background",
@@ -29,10 +30,7 @@
     "pages/plugin/indexes",
     "pages/plugin/animation",
     "pages/plugin/drawer",
-    "pages/plugin/verticalnav",
-    "pages/main_page/search/search",
-    "pages/main_page/my/my",
-    "pages/main_page/search/search"
+    "pages/plugin/verticalnav"
   ],
   "window": {
     "navigationBarBackgroundColor": "#0081ff",
@@ -45,7 +43,7 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "test",
+  "appname": "best",
   "compilerVersion": "2.1.4",
   "usingComponents": {
     "ctmainpage": "/pages/main_page/home/home",

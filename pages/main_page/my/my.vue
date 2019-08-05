@@ -10,10 +10,10 @@
 					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg"
 					 mode="widthFix"></image>
 					<view class="cu-tag bg-blue">史诗</view>
-					<view class="cu-bar bg-shadeBottom"> 
+					<view class="cu-bar bg-shadeBottom" @tap="myset"> 
 					<text class="text-cut">我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。我已天理为凭，踏入这片荒芜，不再受凡人的枷锁遏制。</text>
 					<text class="lg text-gray cuIcon-qrcode"></text>
-					<text class="lg text-gray cuIcon-right" @tap="myset"></text>
+					<text class="lg text-gray cuIcon-right"></text>
 					</view>
 				</view>
 				<view class="cu-list menu-avatar">
@@ -164,7 +164,11 @@
 				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
 			},
 			myset(e){
-				
+				uni.navigateTo({
+					url: '/pages/main_page/myset/myset',
+					animationType: 'pop-in',
+					animationDuration: 200
+				});
 			}
 		},
 	}
