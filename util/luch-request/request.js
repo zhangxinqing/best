@@ -8,7 +8,7 @@
  * **/
 export default class Request {
   config = {
-    baseUrl: '',
+    baseUrl: 'https://www.91jdj.cn',
     header: {
       'Content-Type': 'application/json;charset=UTF-8'
     },

@@ -175,12 +175,8 @@
 </script>
 
 <style>
-	@import "../../../colorui/animation.css";
 	
-	image[class*="gif-"] {
-		border-radius: 6upx;
-		display: block;
-	}
+	
 	
 	.user-avatar{
 		position: absolute;

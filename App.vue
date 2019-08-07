@@ -1,6 +1,9 @@
 <script>
-	import Vue from 'vue'
+	import Vue from 'vue';
+	import utiltool from '@/util/we7/resource/js/utiltool.js';
+	
 	export default {
+		
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
@@ -106,11 +109,12 @@
 
 		},
 		onShow: function() {
+			utiltool.mayiwoLog("util tool mayiwoLog");
 			console.log('App Show')
 		},
 		onHide: function() {
 			console.log('App Hide')
-		}
+		} 
 
 	}
 </script>

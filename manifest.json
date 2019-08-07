@@ -7,7 +7,12 @@
     "transformPx" : false,
     "app-plus" : {
         /* 5+App特有相关 */
-        "modules" : {},
+        "modules" : {
+            "OAuth" : {},
+            "Payment" : {},
+            "Push" : {},
+            "Share" : {}
+        },
         /* 模块配置 */
         "distribute" : {
             /* 应用发布信息 */
@@ -41,13 +46,42 @@
             "ios" : {},
             /* ios打包配置 */
             "sdkConfigs" : {}
+        },
+        "nativePlugins" : {
+            "Html5App-JdUnion" : {
+                "secretkey" : "",
+                "appkey" : "",
+                "__plugin_info__" : {
+                    "name" : "Android 和 IOS 京东联盟 呼起京东App 插件 - [试用版，仅用于自定义基座]",
+                    "description" : "支持 Android 和 IOS 京东联盟SDK  呼起京东App  ",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=526",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : true,
+                    "bought" : 0,
+                    "pid" : "526",
+                    "parameters" : {
+                        "secretkey" : {
+                            "des" : "sdk secretkey",
+                            "key" : "Jdunion:secretkey",
+                            "value" : ""
+                        },
+                        "appkey" : {
+                            "des" : "sdk appkey",
+                            "key" : "Jdunion:appkey",
+                            "value" : ""
+                        }
+                    }
+                }
+            }
         }
     },
     /* SDK配置 */
     "quickapp" : {},
     /* 快应用特有相关 */
     "mp-weixin" : {
-        "appid" : "123321",
+        "appid" : "wxc109e26931d3a80c",
         "setting" : {
             "urlCheck" : false,
             "es6" : true

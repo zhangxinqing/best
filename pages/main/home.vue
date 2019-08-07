@@ -24,6 +24,7 @@
 </template>
 
 <script>
+	import utiltool from '@/util/we7/resource/js/utiltool.js';
 	export default {
 		data() {
 		return {
@@ -32,8 +33,14 @@
 		},
 		methods: {
 			NavChange: function(e) {
+				utiltool.mayiwoLog(e.currentTarget.dataset.cur);
 				this.PageCur = e.currentTarget.dataset.cur
 			}
+		},
+		onLoad() {
+			utiltool.getGoodList({},function(res){
+				utiltool.mayiwoLog(res);
+			})
 		}
 	}
 </script>
