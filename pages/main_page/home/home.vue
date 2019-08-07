@@ -51,7 +51,7 @@
 			</view>
 		</view>
 		<view class="cu-list grid" :class="['col-' + gridCol, gridBorder ? '' : 'no-border']">
-			<view class="cu-item" v-for="(item, index) in cuIconList" :key="index" v-if="index < gridCol * 2">
+			<view class="cu-item" @tap="toHomelist" v-for="(item, index) in cuIconList" :key="index" v-if="index < gridCol * 2">
 				<view :class="['cuIcon-' + item.cuIcon, 'text-' + item.color]">
 					<view class="cu-tag badge" v-if="item.badge != 0">
 						<block v-if="item.badge != 1">{{ item.badge > 99 ? '99+' : item.badge }}</block>
@@ -341,6 +341,13 @@ export default {
 		},
 		Gridchange(e) {
 			this.gridCol = e.detail.value;
+		},
+		toHomelist(e){
+			uni.navigateTo({
+				url: '/pages/main_page/homelist/homelist',
+				animationType: 'pop-in',
+				animationDuration: 200
+			});
 		}
 	},
 	onLoad() {

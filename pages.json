@@ -23,6 +23,13 @@
 		,{
 		    "path" : "pages/main_page/myset/myset",
 		    "style" : {}
+		},{
+		    "path" : "pages/main_page/homelist/homelist",
+		    "style" : {}
+		},
+		{
+		    "path" : "pages/main_page/homelist/detail/detail",
+		    "style" : {}
 		},
 		{
 			"path": "pages/index/index",
