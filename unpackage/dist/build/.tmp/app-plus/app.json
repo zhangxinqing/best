@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/main/home",
+    "pages/main_page/home/home",
     "pages/main_page/about/about",
     "pages/main_page/post/post",
     "pages/main_page/my/my",
     "pages/main_page/myset/myset",
+    "pages/main_page/homelist/homelist",
+    "pages/main_page/homelist/detail/detail",
     "pages/index/index",
     "pages/basics/layout",
     "pages/basics/background",
@@ -38,13 +41,40 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#f37b1d",
+    "borderStyle": "black",
+    "backgroundColor": "#333333",
+    "list": [
+      {
+        "pagePath": "pages/main_page/home/home",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_cur.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/main_page/post/post",
+        "iconPath": "static/tabbar/post.png",
+        "selectedIconPath": "static/tabbar/post.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/main_page/my/my",
+        "iconPath": "static/tabbar/my.png",
+        "selectedIconPath": "static/tabbar/my_cur.png",
+        "text": "我的"
+      }
+    ]
+  },
   "nvueCompiler": "weex",
+  "renderer": "auto",
   "splashscreen": {
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
   "appname": "best",
-  "compilerVersion": "2.1.4",
+  "compilerVersion": "2.1.6",
   "usingComponents": {
     "ctmainpage": "/pages/main_page/home/home",
     "ctaboutpage": "/pages/main_page/about/about",
