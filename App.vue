@@ -29,7 +29,11 @@
 					// #endif
 				}
 			})
-
+			Vue.prototype.Defaulttheam={
+				headcls:'bg-gradual-orange',
+				btncls:'bg-grey',
+				textcls:'text-orange',
+			},
 			Vue.prototype.ColorList = [{
 					title: '嫣红',
 					name: 'red',

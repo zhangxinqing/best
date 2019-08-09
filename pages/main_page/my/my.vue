@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-orange" :isBack="false">
+		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="false">
 			<block slot="backText">返回</block>
 			<block slot="content">我的</block>
 		</cu-custom>
@@ -32,7 +32,7 @@
 						</view>
 					</view>
 				</view>
-				<scroll-view scroll-x class="bg-gradual-orange nav text-center">
+				<scroll-view scroll-x class=" nav text-center" :class="Defaulttheam.headcls">
 					<view class="cu-item" :class="0==TabCur?'text-white cur':''" @tap="tabSelect" data-id="0">
 						<text class="cuIcon-camerafill"></text> 数码
 					</view>
