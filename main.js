@@ -13,6 +13,12 @@ Vue.component('ctpost',ctpost)
 import ctmy from './pages/main_page/my/my.vue'
 Vue.component('ctmy',ctmy)
 
+
+
+
+
+
+
 import basics from './pages/basics/home.vue'
 Vue.component('basics',basics)
 

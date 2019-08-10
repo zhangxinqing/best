@@ -16,7 +16,7 @@
 			indicator-color="#8799a3"
 			indicator-active-color="#0081ff"
 		>
-			<swiper-item v-for="(item, index) in swiperList" :key="index" :class="cardCur == index ? 'cur' : ''">
+			<swiper-item @tap="toHomelist2" v-for="(item, index) in swiperList" :key="index" :class="cardCur == index ? 'cur' : ''">
 				<view class="swiper-item">
 					<image :src="item.url" mode="aspectFill" v-if="item.type == 'image'"></image>
 					<video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type == 'video'"></video>
@@ -345,6 +345,13 @@ export default {
 		toHomelist(e){
 			uni.navigateTo({
 				url: '/pages/main_page/homelist/homelist',
+				animationType: 'pop-in',
+				animationDuration: 200
+			});
+		},
+		toHomelist2(e){
+			uni.navigateTo({
+				url: '/pages/main_page/homelist2/index',
 				animationType: 'pop-in',
 				animationDuration: 200
 			});

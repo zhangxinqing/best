@@ -11,28 +11,29 @@
             </view>
         </scroll-view>
         <view class="line-h"></view>
-        <swiper :current="tabIndex" class="swiper-box" id="swiper-boxcontent"  :style="contentstyle" :duration="300" @change="ontabchange">
-            <swiper-item class="swiper-item" v-for="(tab,index1) in newsList" :key="index1"  :id="['swiperitem'+index1]">
-                <scroll-view class="scroll-v list" scroll-y @scrolltolower="loadMore(index1)"  :id="['scrollviewitem'+index1]">
-                    <!-- #ifdef APP-PLUS-NVUE -->
-                    <refresh class="refresh" @refresh="onrefresh(index1)" @pullingdown="onpullingdown" :display="tab.refreshing ? 'show' : 'hide'">
-                        <div class="refresh-view">
-                            <image class="refresh-icon" :src="refreshIcon" :style="{width: (tab.refreshing || pulling) ? 0: '32px'}" :class="{'refresh-icon-active': tab.refreshFlag}"></image>
-                            <image class="loading-icon" :src="loadingIcon" v-if="tab.refreshing"></image>
-                            <text class="loading-text">{{tab.refreshText}}</text>
-                        </div>
-                    </refresh>
-                    <!-- #endif -->
-                    <view class="cu-card article solid-bottom no-card" v-for="(newsitem,index2) in tab.data" :key="newsitem.id">
-                        <media-item :options="newsitem" @close="close(index1,index2)" @click="goDetail(newsitem)"></media-item>
-                    </view>
-                    <view class="loading-more">
-                        <text class="loading-more-text">{{tab.loadingText}}</text>
-                    </view>
-                </scroll-view>
-            </swiper-item>
-        </swiper>
+        
     </view>
+	<swiper :current="tabIndex" class="swiper-box" id="swiper-boxcontent"  :style="contentstyle" :duration="300" @change="ontabchange">
+	    <swiper-item class="swiper-item" :style="contentstyle" v-for="(tab,index1) in newsList" :key="index1"  :id="['swiperitem'+index1]">
+	        <scroll-view class="scroll-v list" scroll-y @scrolltolower="loadMore(index1)"  :id="['scrollviewitem'+index1]">
+	            <!-- #ifdef APP-PLUS-NVUE -->
+	            <refresh class="refresh" @refresh="onrefresh(index1)" @pullingdown="onpullingdown" :display="tab.refreshing ? 'show' : 'hide'">
+	                <div class="refresh-view">
+	                    <image class="refresh-icon" :src="refreshIcon" :style="{width: (tab.refreshing || pulling) ? 0: '32px'}" :class="{'refresh-icon-active': tab.refreshFlag}"></image>
+	                    <image class="loading-icon" :src="loadingIcon" v-if="tab.refreshing"></image>
+	                    <text class="loading-text">{{tab.refreshText}}</text>
+	                </div>
+	            </refresh>
+	            <!-- #endif -->
+	            <view class="cu-card article solid-bottom no-card" v-for="(newsitem,index2) in tab.data" :key="newsitem.id">
+	                <media-item :options="newsitem" @close="close(index1,index2)" @click="goDetail(newsitem)"></media-item>
+	            </view>
+	            <view class="loading-more">
+	                <text class="loading-more-text">{{tab.loadingText}}</text>
+	            </view>
+	        </scroll-view>
+	    </swiper-item>
+	</swiper>
 	<view class="cu-tabbar-height"></view>
 	</view>
 </template>
@@ -104,7 +105,7 @@
         },
         data() {
             return {
-				contentstyle:{height:'1000px'},
+				contentstyle:{height:'1000upx'},
 				bodycontenth:0,
                 newsList: [],
                 cacheTab: [],
@@ -173,7 +174,7 @@
 				setTimeout(function(){
 					var itemnode=null;
 					query.select('#scrollviewitem'+index).boundingClientRect(dataitem => {
-						that.contentstyle.height=parseInt(dataitem.height)+"px";
+						that.contentstyle.height=parseInt(dataitem.height*2)+"upx";
 						console.log("页面高度为：" + that.contentstyle.height);
 					}).exec();
 				},1000);
