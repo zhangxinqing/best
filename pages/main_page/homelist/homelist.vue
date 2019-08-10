@@ -1,6 +1,6 @@
 <template>
 	<view>
-	<cu-custom :bgColor="Defaulttheam.headcls" :isBack="true">
+	<cu-custom bgColor="bg-gradual-orange" :isBack="true">
 		<block slot="backText">返回</block>
 		<block slot="content">头部滑动</block>
 	</cu-custom>

@@ -22,6 +22,7 @@
     "Payment": {},
     "Push": {},
     "Share": {},
+    "VideoPlayer": {},
     "UniNView": {
       "description": "UniNView原生渲染"
     }

@@ -6,14 +6,13 @@
 				:src="item.src" controls v-for="(item,index) in videoList"
 				@tapVideo="videoPlay(index)"
 				@touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd">
-				<cover-view class="cover-view-left">
-					{{item.content}}
-					<input placeholder="说说你的看法" /> 
-				</cover-view>
+				<cover-view class="controls-title">{{title}}</cover-view>
+				<cover-view class="controls-price">来源 作者丁小白推荐</cover-view>
+				<cover-image class="controls-play img" @click="play" src="https://www.91jdj.cn/addons/nets_haojk//skin/shui.jpg"></cover-image>
 				<cover-image class="avater img" @tap.stop="tapAvater" :src="item.avater"></cover-image>
-				<cover-image class="aixin img" @tap.stop="tapLove" :src="item.check?'/static/aixinRed.png':'/static/aixin.png'"></cover-image>
-				<cover-image class="xiaoxi img" @tap.stop="tapMsg" src="/static/xiaoxi.png"></cover-image>
-				<cover-image class="share img" @tap.stop="tapShare" src="/static/share-fill.png"></cover-image>
+				<cover-image class="aixin img" @tap.stop="tapLove" src="http://www.91jdj.cn/attachment/images/69/2019/08/uSUKnTofUn0SfuwRn3SgO4WtTso3R3.png"></cover-image>
+				<cover-image class="xiaoxi img" @tap.stop="tapMsg" src="http://www.91jdj.cn/attachment/images/69/2019/08/QKyhcbbxYcuYHhKHbCb3sc3HZQIuYc.png"></cover-image>
+				<cover-image class="controls-share" @tap.stop="tapShare" src="http://www.91jdj.cn/attachment/images/69/2019/08/p9fwD74jk4nX9kqxTd4xZjJo6Jf649.png"></cover-image>
 			</video>
 		</view>
     </view>
@@ -23,6 +22,7 @@
     export default {
         data() {
             return {
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗',
                 videoCtx: null,
 				listTouchStartY: 0,
 				listTouchDirection: null,
@@ -37,27 +37,31 @@
 						content:'456',
 						flag:false,
 						check:false,
-						avater:'../../static/logo.png'
+						avater:'https://www.91jdj.cn/addons/nets_haojk//skin/logo.jpg'
 					},
 					{
 						src:'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167057&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
 						content:'123',
 						flag:false,
 						check:true,
-						avater:'http://img.kaiyanapp.com/255365dbfc2622930eb0cdb33e43abf0.jpeg?imageMogr2/quality/60/format/jpg'
+						avater:'https://www.91jdj.cn/addons/nets_haojk//skin/logo.jpg'
 					},
 					{
 						src:'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167805&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
 						content:'789',
 						flag:false,
 						check:false,
-						avater:'http://img.kaiyanapp.com/255365dbfc2622930eb0cdb33e43abf0.jpeg?imageMogr2/quality/60/format/jpg'
+						avater:'https://www.91jdj.cn/addons/nets_haojk//skin/logo.jpg'
 					},
 				],
 			}
         },
-		onLoad(){
-			this.sysheight = uni.getSystemInfoSync().windowHeight
+		onLoad(event){
+			this.sysheight = uni.getSystemInfoSync().windowHeight;
+			this.title=event.title?event.title:"无意者 烈火焚身;以正义的烈火拔出黑暗";
+			uni.setNavigationBarTitle({
+				title: this.title
+			});
 		},
         async mounted() {
 			//#ifdef APP-PLUS
@@ -227,6 +231,18 @@
     }
 </script>
 <style lang="scss" scoped>
+	.controls-play {
+		position: absolute;
+		bottom: 90upx;
+	    left: 50rpx;
+	}
+	.controls-share {
+	    right: 50rpx;
+		width: 50rpx;
+		height: 50rpx;
+		top: 10%;
+		position: absolute;
+	}
     .video {
     	width: 100%;
     	height: 100vh;
@@ -289,5 +305,20 @@
 		overflow: hidden;
 		
 	}
-	
+	.controls-title {
+		position: absolute;
+	    width: 100%;
+		top: 88%;
+	    text-align: left;
+		left: 150rpx;
+	    color: #FFFFFF;
+	}
+	.controls-price {
+		position: absolute;
+	    width: 100%;
+		top: 91%;
+	    text-align: left;
+		left: 150rpx;
+	    color: #FFFFFF;
+	}
 </style>
