@@ -1,0 +1,63 @@
+.video.data-v-201a0942 {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: block;
+}
+.cover-view-left.data-v-201a0942 {
+  position: absolute;
+  margin-left: 10rpx;
+  width: 80%;
+  color: #FFFFFF;
+  bottom: 100rpx;
+  font-size: 14px;
+}
+.cover-view-left .left-content.data-v-201a0942 {
+    width: 100%;
+    white-space: pre-wrap;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    overflow: hidden;
+}
+.cover-view-left input.data-v-201a0942 {
+    height: 50rpx;
+    border: 1px solid #FFFFFF;
+    padding-left: 10rpx;
+    width: 400rpx;
+}
+.avater.data-v-201a0942 {
+  position: absolute;
+  bottom: 340rpx;
+  right: 0;
+  margin-right: 10rpx;
+  border-radius: 40rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.aixin.data-v-201a0942 {
+  position: absolute;
+  bottom: 260rpx;
+  right: 0;
+  margin-right: 10rpx;
+}
+.xiaoxi.data-v-201a0942 {
+  position: absolute;
+  bottom: 180rpx;
+  right: 0;
+  margin-right: 10rpx;
+}
+.share.data-v-201a0942 {
+  position: absolute;
+  bottom: 100rpx;
+  right: 0;
+  margin-right: 10rpx;
+}
+.img.data-v-201a0942 {
+  height: 80rpx;
+  width: 80rpx;
+}
+.page.data-v-201a0942 {
+  height: 100vh;
+  overflow: hidden;
+}
+

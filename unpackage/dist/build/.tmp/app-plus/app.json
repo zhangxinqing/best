@@ -8,6 +8,7 @@
     "pages/main_page/myset/myset",
     "pages/main_page/homelist/homelist",
     "pages/main_page/homelist/detail/detail",
+    "pages/main_page/video/index",
     "pages/index/index",
     "pages/basics/layout",
     "pages/basics/background",

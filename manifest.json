@@ -11,7 +11,8 @@
             "OAuth" : {},
             "Payment" : {},
             "Push" : {},
-            "Share" : {}
+            "Share" : {},
+            "VideoPlayer" : {}
         },
         /* 模块配置 */
         "distribute" : {

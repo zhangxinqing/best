@@ -27,13 +27,15 @@
 					Vue.prototype.StatusBar = e.statusBarHeight;
 					Vue.prototype.CustomBar = e.statusBarHeight + e.titleBarHeight;
 					// #endif
+					
+					Vue.prototype.Defaulttheam={
+						headcls:'bg-gradual-orange',
+						btncls:'bg-grey',
+						textcls:'text-orange',
+					}
 				}
 			})
-			Vue.prototype.Defaulttheam={
-				headcls:'bg-gradual-orange',
-				btncls:'bg-grey',
-				textcls:'text-orange',
-			},
+			
 			Vue.prototype.ColorList = [{
 					title: '嫣红',
 					name: 'red',

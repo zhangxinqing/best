@@ -66,7 +66,7 @@
 				<view class="padding-xs text-lg">Only the guilty need fear me. Only the guilty need fear me. Only the guilty need fear me. Only the guilty need fear me.</view>
 			</view>
 		</view>
-		<view class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
+		<view  @tap="tovideo2" class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
 			<view class="cu-item shadow">
 				<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
 				<view class="content">
@@ -354,6 +354,12 @@ export default {
 				url: '/pages/main_page/video/index',
 				animationType: 'pop-in',
 				animationDuration: 200
+			});
+		},
+		tovideo2(e){
+			
+			uni.navigateTo({
+			    url: '/pages/main_page/homelist/detail/detail?title=凡真正的恩典因不完整而美丽'
 			});
 		}
 	},
