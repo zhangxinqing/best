@@ -60,9 +60,9 @@
 				<text>{{ item.name }}</text>
 			</view>
 		</view>
-		<view class="bg-img bg-mask flex align-center" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 414upx;">
+		<view @tap="tovideo" class="bg-img bg-mask flex align-center" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 414upx;">
 			<view class="padding-xl text-white">
-				<view class="padding-xs text-xxl text-bold">钢铁之翼</view>
+				<view class="padding-xs text-xxl text-bold">钢铁之翼小视频</view>
 				<view class="padding-xs text-lg">Only the guilty need fear me. Only the guilty need fear me. Only the guilty need fear me. Only the guilty need fear me.</view>
 			</view>
 		</view>
@@ -345,6 +345,13 @@ export default {
 		toHomelist(e){
 			uni.navigateTo({
 				url: '/pages/main_page/homelist/homelist',
+				animationType: 'pop-in',
+				animationDuration: 200
+			});
+		},
+		tovideo(e){
+			uni.navigateTo({
+				url: '/pages/main_page/video/index',
 				animationType: 'pop-in',
 				animationDuration: 200
 			});

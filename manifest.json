@@ -47,35 +47,7 @@
             /* ios打包配置 */
             "sdkConfigs" : {}
         },
-        "nativePlugins" : {
-            "Html5App-JdUnion" : {
-                "secretkey" : "",
-                "appkey" : "",
-                "__plugin_info__" : {
-                    "name" : "Android 和 IOS 京东联盟 呼起京东App 插件 - [试用版，仅用于自定义基座]",
-                    "description" : "支持 Android 和 IOS 京东联盟SDK  呼起京东App  ",
-                    "platforms" : "Android,iOS",
-                    "url" : "https://ext.dcloud.net.cn/plugin?id=526",
-                    "android_package_name" : "",
-                    "ios_bundle_id" : "",
-                    "isCloud" : true,
-                    "bought" : 0,
-                    "pid" : "526",
-                    "parameters" : {
-                        "secretkey" : {
-                            "des" : "sdk secretkey",
-                            "key" : "Jdunion:secretkey",
-                            "value" : ""
-                        },
-                        "appkey" : {
-                            "des" : "sdk appkey",
-                            "key" : "Jdunion:appkey",
-                            "value" : ""
-                        }
-                    }
-                }
-            }
-        }
+        "nativePlugins" : {}
     },
     /* SDK配置 */
     "quickapp" : {},
