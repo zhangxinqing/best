@@ -11,7 +11,9 @@
     </view>
 </template>
 <script>
+	
 export default {
+	
         data() {
             return {
 				title:'',
@@ -21,6 +23,16 @@ export default {
             }
         },
         mounted() {
+			const res = uni.getSystemInfoSync();
+			console.log(res.model);
+			console.log(res.pixelRatio);
+			console.log(res.windowWidth);
+			console.log(res.windowHeight);
+			console.log(res.language);
+			console.log(res.version);
+			console.log(res.platform);
+			this.contentstyle.height=res.windowHeight+"px";
+			this.contentstyle.width=res.windowWidth+"px";
             this.videoCtx = uni.createVideoContext('demoVideo')
         },
 		onLoad(event) {
@@ -29,6 +41,7 @@ export default {
 			uni.setNavigationBarTitle({
 				title: this.title
 			});
+			
 		},
 		onReady() {
 			try {
