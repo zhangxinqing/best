@@ -12,10 +12,14 @@
 			<view class="header" :style="{ position: headerPosition }">
 				<div class="page-header-wrapper">
 					<div class="page-header-left">
+						<uni-icon style="display: block;" type="chatbubble-filled" color="white" size="30"></uni-icon>
 					</div>
 					<div class="page-header-center">
-						</div>
+						<text @click="toUrl('/pages/search/search')" class="search-input">输入关键字搜索</text>
+					</div>
 					<div class="page-header-right" @click="toUrl('/pages/list/create')">
+						<uni-icon type="camera" color="white" size="30"></uni-icon>
+						<text class="contribute-text">发布</text>
 					</div>
 				</div>
 			</view>
@@ -110,63 +114,6 @@
 			videoSrc: false
 		}
 	];
-	var listData2 = [{
-			"datetime": "40分钟前",
-			"article_type": 0,
-			"title": "2uni-app行业峰会频频亮相，开发者反响热烈!",
-			"source": "DCloud",
-			"comment_count": 639,
-			videoSrc: true
-		},
-		{
-			"datetime": "一天前",
-			"article_type": 1,
-			"title": "2DCloud完成B2轮融资，uni-app震撼发布!",
-			"image_url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
-			"source": "DCloud",
-			"comment_count": 11395,
-			videoSrc: false
-		},
-		{
-			"datetime": "一天前",
-			"article_type": 2,
-			"title": "2中国技术界小奇迹：HBuilder开发者突破200万",
-			"image_url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/muwu.jpg?imageView2/3/w/200/h/100/q/90",
-			"source": "DCloud",
-			"comment_count": 11395,
-			videoSrc: false
-		},
-		{
-			"article_type": 3,
-			"image_list": [{
-				"url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/cbd.jpg?imageView2/3/w/200/h/100/q/90",
-				"width": 563,
-				"height": 316
-			}, {
-				"url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/muwu.jpg?imageView2/3/w/200/h/100/q/90",
-				"width": 641,
-				"height": 360
-			}, {
-				"url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
-				"width": 640,
-				"height": 360
-			}],
-			"datetime": "5分钟前",
-			"title": "2uni-app 支持使用 npm 安装第三方包，生态更趋丰富",
-			"source": "DCloud",
-			"comment_count": 11,
-			videoSrc: true
-		},
-		{
-			"datetime": "2小时前",
-			"article_type": 4,
-			"title": "2uni-app 支持原生小程序自定义组件，更开放、更自由",
-			"image_url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/cbd.jpg?imageView2/3/w/200/h/100/q/90",
-			"source": "DCloud",
-			"comment_count": 69,
-			videoSrc: false
-		}
-	];
 	export default {
 		components: {
 			refresh,
@@ -212,13 +159,13 @@
 				}],
 				list: [
 					listData,
-					listData2,
 					listData,
-					listData2,
 					listData,
-					listData2,
 					listData,
-					listData2,
+					listData,
+					listData,
+					listData,
+					listData,
 					listData
 				] //数据格式
 			}
@@ -228,7 +175,7 @@
 		},
 		onLoad() {
 			for (let j = 1; j <= this.tabBars.length; j++) {
-				this.pages.push(j);
+				this.pages.push(1);
 			}
 		},
 		onPageScroll(e) {
@@ -247,14 +194,14 @@
 			toucheEnd(e) {
 				console.log(e)
 				if (e.changedTouches[0].pageX - startX > 120 && this.currentTab == 0) {
-					// uni.switchTab({
-					// 	url: '../index/index'
-					// })
+					uni.switchTab({
+						url: '../index/index'
+					})
 				}
 			},
 			// 点击反馈事件
 			conClick(e) {
-				
+				this.$refs.circle.conClick(e);
 			},
 			// 下拉刷新事件
 			refreshStart(e) {
