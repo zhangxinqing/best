@@ -97,7 +97,7 @@
 		max-height: 300upx;
 		position: fixed;
 		z-index: 999;
-		top: 0;
+		top: 100;
 		left: 0;
 		transform: translateY(-100upx);
 	}

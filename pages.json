@@ -34,9 +34,6 @@
 		{
 		    "path" : "pages/main_page/video/index",
 		    "style" : {}
-		},{
-		    "path" : "pages/main_page/homelist2/index",
-		    "style" : {}
 		},
 		{
 			"path": "pages/index/index",

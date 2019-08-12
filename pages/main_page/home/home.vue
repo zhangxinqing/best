@@ -351,7 +351,7 @@ export default {
 		},
 		toHomelist2(e){
 			uni.navigateTo({
-				url: '/pages/main_page/homelist2/index',
+				url: '/pages/main_page/homelist/homelist',
 				animationType: 'pop-in',
 				animationDuration: 200
 			});
