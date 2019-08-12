@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom",
     "refresh": "/colorui/components/refresh",
     "circle": "/colorui/components/circle",
     "nav-tab": "/colorui/components/navTab",

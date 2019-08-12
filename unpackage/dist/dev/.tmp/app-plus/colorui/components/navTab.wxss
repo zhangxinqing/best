@@ -1,15 +1,16 @@
 .navTabBox {
   width: 100vw;
-  color: rgba(255, 255, 255, 0.5);
+  padding-top: 3vw;
+  color: #000000;
   position: fixed;
   z-index: 1000;
 }
 .navTabBox .click {
-    color: white;
+    color: #000000;
+    font-weight: bold;
 }
 .navTabBox .longTab {
     width: 100%;
-    background-color: #ec706b;
 }
 .navTabBox .longTab .longItem {
       width: 20%;
@@ -32,14 +33,14 @@
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
-      -webkit-transition: .5s;
-      -o-transition: .5s;
-      transition: .5s;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
 }
 .navTabBox .longTab .underlineBox .underline {
         width: 84rpx;
-        height: 4px;
-        background-color: white;
+        height: 2px;
+        background-color: #000000;
 }
 .navTabBox .shortTab {
     width: 100%;
@@ -82,9 +83,9 @@
       -webkit-justify-content: center;
           -ms-flex-pack: center;
               justify-content: center;
-      -webkit-transition: .5s;
-      -o-transition: .5s;
-      transition: .5s;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
+      transition: 0.5s;
 }
 .navTabBox .shortTab .underlineBox .underline {
         width: 84rpx;

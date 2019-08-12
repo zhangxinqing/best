@@ -69,7 +69,7 @@
   width: 80rpx;
 }
 .page.data-v-58a3010a {
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 .controls-title.data-v-58a3010a {
