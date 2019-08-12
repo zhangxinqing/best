@@ -1,33 +1,20 @@
 <template>
+	
 	<!-- conClick为点击反馈事件 其他touch为下拉刷新事件 -->
 	<view class="pagecontent" @click="conClick" @touchstart="refreshStart" @touchmove="refreshMove" @touchend="refreshEnd">
+		<cu-custom bgColor="bg-gradual-orange" :isBack="true">
+			<block slot="backText">返回</block>
+			<block slot="content">热点推荐</block>
+		</cu-custom>
 		<!-- 点击反馈组件 -->
 		<circle ref="circle"></circle>
 		<!-- 下拉刷新组件 传入刷新事件 -->
 		<refresh ref="refresh" :isRefresh="isRefresh"></refresh>
-		<view class='nav page-header'>
-			<!-- 搜索 -->
-			<!-- 状态栏占位 -->
-			<view class="status" :style="{ position: headerPosition }"></view>
-			<view class="header" :style="{ position: headerPosition }">
-				<div class="page-header-wrapper">
-					<div class="page-header-left">
-						<uni-icon style="display: block;" type="chatbubble-filled" color="white" size="30"></uni-icon>
-					</div>
-					<div class="page-header-center">
-						<text @click="toUrl('/pages/search/search')" class="search-input">输入关键字搜索</text>
-					</div>
-					<div class="page-header-right" @click="toUrl('/pages/list/create')">
-						<uni-icon type="camera" color="white" size="30"></uni-icon>
-						<text class="contribute-text">发布</text>
-					</div>
-				</div>
-			</view>
-			<!-- 占位 -->
-			<view class="place"></view>
-			<!-- 导航栏 agents导航栏标题 -->
+		<view class='bg-gradual-orange'>
+			
 			<navTab ref="navTab" :tabBars="tabBars"></navTab>
 		</view>
+		
 		<!-- swiper切换 swiper-item表示一页 scroll-view表示滚动视窗 -->
 		<swiper style="min-height: 100vh;" :duration="400" :current="currentTab" @change="swiperTab" @touchstart="touchStart"
 		 @touchend="toucheEnd">
@@ -35,7 +22,7 @@
 				<scroll-view style="height: 100%;" scroll-y="true" @scrolltolower="loadMore">
 					<view style="width: 100%;height: 80upx;"></view>
 					<view class='content'>
-						<view class='card' v-for="(item,index) in listItem" v-if="listItem.length > 0" :key="index">
+						<view class='cu-card article solid-bottom no-card' v-for="(item,index) in listItem" v-if="listItem.length > 0" :key="index">
 							<!-- {{item}} -->
 							<media-list :options="item" @close="close(listItem,index)" @click="goDetail(item,index)"></media-list>
 						</view>
@@ -293,141 +280,6 @@
 </script>
 
 <style lang="scss">
-	page {
-		background-color: #ec706b;
-	}
-
-	.pagecontent {
-		background-color: #ec706b;
-		height: 100%;
-		overflow: hidden;
-	}
-
-	.content {
-		width: 100%;
-		background: white;
-		flex: 1;
-	}
-
-	.noCard {
-		width: 90%;
-		height: 200upx;
-		margin: auto;
-		background-color: white;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: #999999;
-		box-shadow: 0 0 10upx 0 rgba(0, 0, 0, 0.10);
-		border-radius: 10upx;
-	}
-
-	/* 顶部标题栏 */
-	.page-header {
-		background-color: #ec706b;
-	}
-
-	.page-header-wrapper {
-		flex-direction: row;
-		justify-content: center;
-		align-items: center;
-		height: 100px;
-		padding: 0px 20px;
-		width: 100%;
-		background-color: #ec706b;
-	}
-
-	.page-header-left {
-		opacity: 0.9;
-		float: left;
-		padding-top: 20px;
-	}
-
-	.logo {
-		font-size: 40upx;
-		color: #fff;
-	}
-
-	.page-header-center {
-		flex: 1;
-		padding: 0px 30px 0 20px;
-		text-align: center;
-	}
-
-	.search-input {
-		height: 70px;
-		font-size: 14px;
-		color: #999999;
-		text-align: center;
-		line-height: 60px;
-		border-radius: 100px;
-		padding-left: 50px;
-		padding-right: 50px;
-		background: white;
-		padding-top: 10upx;
-		padding-bottom: 10upx;
-	}
-
-	.page-header-right {
-		width: 40px;
-		align-items: center;
-		float: right;
-		margin-top: -50px;
-	}
-
-	.uni-icon-camera {
-		line-height: 10upx !important;
-		display: block !important;
-		padding-top: 30upx !important;
-	}
-
-	.contribute-icon {
-		width: 50px;
-		height: 44px;
-	}
-
-	.contribute-text {
-		font-size: 14px;
-		color: #fff;
-	}
-
-
-	.slider {
-		flex: 1;
-		background-color: #f8f8f8;
-	}
-
-	.status {
-		background-color: #ec706b;
-		width: 100%;
-		height: 0;
-		position: fixed;
-		z-index: 100;
-		top: 0;
-		/*  #ifdef  APP-PLUS  */
-		height: var(--status-bar-height); //覆盖样式
-		/*  #endif  */
-	}
-
-	.header {
-		background-color: #ec706b;
-		width: 100%;
-		display: flex;
-		align-items: center;
-		position: fixed;
-		top: 0;
-		z-index: 100;
-		/*  #ifdef  APP-PLUS  */
-		top: var(--status-bar-height);
-		/*  #endif  */
-	}
-
-	.place {
-		background-color: #ec706b;
-		height: 120upx;
-		/*  #ifdef  APP-PLUS  */
-		margin-top: var(--status-bar-height);
-		/*  #endif  */
-	}
+	
 </style>
 
