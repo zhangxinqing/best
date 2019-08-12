@@ -1,6 +1,0 @@
-{
-  "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom",
-    "media-item": "/pages/main_page/homelist/news-item"
-  }
-}

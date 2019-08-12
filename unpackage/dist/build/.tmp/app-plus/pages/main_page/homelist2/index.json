@@ -1,9 +1,0 @@
-{
-  "usingComponents": {
-    "refresh": "/colorui/components/refresh",
-    "circle": "/colorui/components/circle",
-    "nav-tab": "/colorui/components/navTab",
-    "uni-icon": "/colorui/components/uni-icon/uni-icon",
-    "media-list": "/colorui/components/tab-nvue/mediaList"
-  }
-}
