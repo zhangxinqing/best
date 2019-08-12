@@ -9,6 +9,7 @@
     "pages/main_page/homelist/homelist",
     "pages/main_page/homelist/detail/detail",
     "pages/main_page/video/index",
+    "pages/main_page/homelist2/index",
     "pages/index/index",
     "pages/basics/layout",
     "pages/basics/background",

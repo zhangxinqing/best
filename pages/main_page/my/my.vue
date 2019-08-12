@@ -32,7 +32,7 @@
 						</view>
 					</view>
 				</view>
-				<scroll-view scroll-x class=" nav text-center" :class="Defaulttheam.headcls">
+				<scroll-view scroll-x class="bg-gradual-orange nav text-center" :class="Defaulttheam.headcls">
 					<view class="cu-item" :class="0==TabCur?'text-white cur':''" @tap="tabSelect" data-id="0">
 						<text class="cuIcon-camerafill"></text> 数码
 					</view>
