@@ -85,6 +85,7 @@ export default {
 	color: #000000;
 	position: fixed;
 	z-index: 1000;
+	background-color:#FFFFFF;
 
 	.click {
 		color: #000000;

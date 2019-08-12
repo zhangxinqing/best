@@ -43,7 +43,7 @@
 	import refresh from "@/colorui/components/refresh.vue"
 	import navTab from "@/colorui/components/navTab.vue"
 	import uniIcon from "@/colorui/components/uni-icon/uni-icon.vue"
-	import mediaList from '@/colorui/components/tab-nvue/mediaList.vue';
+	import mediaList from '@/colorui/components/medialist/mediaList.vue';
 	var listData = [{
 			"datetime": "40分钟前",
 			"article_type": 0,
