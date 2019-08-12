@@ -4,7 +4,7 @@
 	<view class="pagecontent" @click="conClick" @touchstart="refreshStart" @touchmove="refreshMove" @touchend="refreshEnd">
 		<cu-custom bgColor="bg-gradual-orange" :isBack="true">
 			<block slot="backText">返回</block>
-			<block slot="content">热点推荐</block>
+			<block slot="content">热点推荐20</block>
 		</cu-custom>
 		<!-- 点击反馈组件 -->
 		<circle ref="circle"></circle>
