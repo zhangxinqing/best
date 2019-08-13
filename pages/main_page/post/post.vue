@@ -30,7 +30,9 @@
 					</view>
 				</view>
 			</view>
-			
+			<view class="padding">
+				<button class="cu-btn block margin-tb-sm lg" :class="Defaulttheam.btncls" type="">提交</button>
+			</view>
 			
 			
 		</form>
@@ -54,7 +56,7 @@
 				uni.chooseImage({
 					count: 4, //默认9
 					sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
-					sourceType: ['album'], //从相册选择
+					sourceType: ['camera','album'], //从相册选择
 					success: (res) => {
 						if (this.imgList.length != 0) {
 							this.imgList = this.imgList.concat(res.tempFilePaths)

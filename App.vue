@@ -39,6 +39,57 @@
 				}
 			})
 			
+			Vue.prototype.ArticleList=[{
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。',
+				remark:'折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+				image:'/static/default-skin/big10006.jpg',
+				author:'正义天使',
+				tag:'史诗',
+				created_at:'2018年12月4日',
+			},{
+				title:'上通自然之性，下取万类之象',
+				remark:'用笔者，天也；流美者，地也',
+				image:'/static/default-skin/big10001.jpg',
+				author:'上官婉儿',
+				tag:'武道',
+				created_at:'2018年12月4日',
+			},{
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。',
+				remark:'折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+				image:'/static/default-skin/big37006.jpg',
+				author:'火炮千金',
+				tag:'荣耀',
+				created_at:'2018年12月4日',
+			},{
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。',
+				remark:'折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+				image:'/static/default-skin/big39000.jpg',
+				author:'妲己',
+				tag:'史诗',
+				created_at:'2018年12月4日',
+			},{
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。',
+				remark:'折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+				image:'/static/default-skin/big10006.jpg',
+				author:'莫甘娜',
+				tag:'史诗',
+				created_at:'2018年12月4日',
+			},{
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。',
+				remark:'折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+				image:'/static/default-skin/big99008.jpg',
+				author:'王昭君',
+				tag:'史诗',
+				created_at:'2018年12月4日',
+			},{
+				title:'无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。',
+				remark:'折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！',
+				image:'/static/default-skin/big84000.jpg',
+				author:'娜可露露',
+				tag:'史诗',
+				created_at:'2018年12月4日',
+			}];
+			
 			Vue.prototype.ColorList = [{
 					title: '嫣红',
 					name: 'red',

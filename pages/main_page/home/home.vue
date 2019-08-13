@@ -23,7 +23,7 @@
 				</view>
 			</swiper-item>
 		</swiper>
-		<view class="cu-bar bg-white solid-bottom margin-top">
+		<view class="cu-bar bg-white solid-bottom margin-top" style="display: none;">
 			<view class="action">
 				<text class="cuIcon-title text-orange "></text>
 				宫格列表
@@ -60,87 +60,28 @@
 				<text>{{ item.name }}</text>
 			</view>
 		</view>
-		<view @tap="tovideo" class="bg-img bg-mask flex align-center" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 414upx;">
+		<view @tap="tovideo" class="bg-img bg-mask flex align-center" style="background-image: url('/static/default-skin/big10006.jpg');height: 414upx;">
 			<view class="padding-xl text-white">
 				<view class="padding-xs text-xxl text-bold">钢铁之翼小视频</view>
 				<view class="padding-xs text-lg">Only the guilty need fear me. Only the guilty need fear me. Only the guilty need fear me. Only the guilty need fear me.</view>
 			</view>
 		</view>
-		<view  @tap="tovideo2" class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
+		<view  @tap="tovideo2"  v-for="(item, index) in ArticleList" :key="index" class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
 			<view class="cu-item shadow">
-				<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
+				<view class="title"><view class="text-cut">{{item.title}}</view></view>
 				<view class="content">
-					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+					<image :src="item.image" mode="aspectFill"></image>
 					<view class="desc">
-						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+						<view class="text-content">{{item.remark}}</view>
 						<view>
-							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
-							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
+							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">{{item.author}}</view>
+							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">{{item.tag}}</view>
 						</view>
 					</view>
 				</view>
 			</view>
 		</view>
-		<view class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
-			<view class="cu-item shadow">
-				<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
-				<view class="content">
-					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-					<view class="desc">
-						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-						<view>
-							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
-							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
-			<view class="cu-item shadow">
-				<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
-				<view class="content">
-					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-					<view class="desc">
-						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-						<view>
-							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
-							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
-			<view class="cu-item shadow">
-				<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
-				<view class="content">
-					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-					<view class="desc">
-						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-						<view>
-							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
-							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-		<view class="cu-card article solid-bottom" :class="isCard ? 'no-card' : ''">
-			<view class="cu-item shadow">
-				<view class="title"><view class="text-cut">无意者 烈火焚身;以正义的烈火拔出黑暗。我有自己的正义，见证至高的烈火吧。</view></view>
-				<view class="content">
-					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
-					<view class="desc">
-						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
-						<view>
-							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
-							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
+		
 
 		<view class="load-progress" :class="loadProgress != 0 ? 'show' : 'hide'" :style="[{ top: CustomBar + 'px' }]">
 			<view class="load-progress-bar bg-green" :style="[{ transform: 'translate3d(-' + (100 - loadProgress) + '%, 0px, 0px)' }]"></view>
@@ -158,42 +99,43 @@ export default {
 			isCard: true,
 			loadProgress: 0,
 			CustomBar: this.CustomBar,
+			ArticleList:this.ArticleList,
 			cardCur: 0,
 			swiperList: [
 				{
 					id: 0,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big84000.jpg'
+					url: '/static/default-skin/big84000.jpg'
 				},
 				{
 					id: 1,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big37006.jpg'
+					url: '/static/default-skin/big37006.jpg'
 				},
 				{
 					id: 2,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big39000.jpg'
+					url: '/static/default-skin/big39000.jpg'
 				},
 				{
 					id: 3,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg'
+					url: '/static/default-skin/big10001.jpg'
 				},
 				{
 					id: 4,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big25011.jpg'
+					url: '/static/default-skin/big25011.jpg'
 				},
 				{
 					id: 5,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big21016.jpg'
+					url: '/static/default-skin/big21016.jpg'
 				},
 				{
 					id: 6,
 					type: 'image',
-					url: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg'
+					url: '/static/default-skin/big99008.jpg'
 				}
 			],
 			dotStyle: false,

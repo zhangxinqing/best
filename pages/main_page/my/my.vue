@@ -7,7 +7,7 @@
 		<view class="cu-card case" :class="isCard?'no-card':''">
 			<view class="cu-item shadow">
 				<view class="image">
-					<image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg"
+					<image src="/static/default-skin/big10006.jpg"
 					 mode="widthFix"></image>
 					<view class="cu-tag " :class="Defaulttheam.btncls">史诗</view>
 					<view class="cu-bar bg-shadeBottom" @tap="myset"> 
@@ -18,15 +18,15 @@
 				</view>
 				<view class="cu-list menu-avatar">
 					<view class="cu-item">
-						<view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+						<view class="cu-avatar round lg" style="background-image:url(/static/default-skin/big10006.jpg);"></view>
 						<view class="content flex-sub">
 							<view class="text-grey">正义天使 凯尔</view>
 							<view class="text-gray text-sm flex justify-between">
 								十天前
-								<view class="text-gray text-sm">
-									<text class="cuIcon-attentionfill margin-lr-xs"></text> 10
-									<text class="cuIcon-appreciatefill margin-lr-xs"></text> 20
-									<text class="cuIcon-messagefill margin-lr-xs"></text> 30
+								<view class="text-gray text-sm" >
+									<text class="cuIcon-attentionfill margin-lr-xs" :class="Defaulttheam.textcls"></text> 10
+									<text class="cuIcon-appreciatefill margin-lr-xs" :class="Defaulttheam.textcls"></text> 20
+									<text class="cuIcon-messagefill margin-lr-xs" :class="Defaulttheam.textcls"></text> 30
 								</view>
 							</view>
 						</view>
@@ -45,12 +45,10 @@
 				</scroll-view>
 				<view class="cu-list menu-avatar comment ">
 					<view class="cu-item">
-						<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Morgana.png);"></view>
+						<view class="cu-avatar round" style="background-image:url(/static/default-skin/big39000.jpg);"></view>
 						<view class="content">
 							<view class="text-grey">莫甘娜</view>
 							<view class="text-gray text-content text-df">
-								凯尔，你被自己的光芒变的盲目。
-								凯尔，你被自己的光芒变的盲目。
 								凯尔，你被自己的光芒变的盲目。
 							</view>
 							<view class="flex justify-between align-center">
@@ -58,7 +56,7 @@
 									港
 									<view class="cu-tag badge" :class="Defaulttheam.btncls">99+</view>
 								</view>
-								<view class='cu-avatar xl radius' style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)">
+								<view class='cu-avatar xl radius' style="background-image:url(/static/default-skin/big39000.jpg)">
 									<view class='cu-tag badge' :class="Defaulttheam.btncls">9</view>
 								</view>
 								<view class='cu-avatar xl radius'>
@@ -79,7 +77,7 @@
 					</view>
 				
 					<view class="cu-item">
-						<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg);"></view>
+						<view class="cu-avatar round" style="background-image:url(/static/default-skin/big10006.jpg);"></view>
 						<view class="content">
 							<view class="text-grey">凯尔</view>
 							<view class="text-gray text-content text-df">
