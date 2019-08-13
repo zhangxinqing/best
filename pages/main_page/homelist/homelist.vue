@@ -2,7 +2,7 @@
 	
 	<!-- conClick为点击反馈事件 其他touch为下拉刷新事件 -->
 	<view class="pagecontent" @click="conClick" @touchstart="refreshStart" @touchmove="refreshMove" @touchend="refreshEnd">
-		<cu-custom bgColor="bg-gradual-orange" :isBack="true">
+		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="true">
 			<block slot="backText">返回</block>
 			<block slot="content">热点推荐20</block>
 		</cu-custom>
@@ -111,6 +111,7 @@
 		},
 		data() {
 			return {
+				Defaulttheam:this.Defaulttheam,
 				headerPosition: 'fixed',
 				currentTab: 0, //sweiper所在页
 				headerTop: null,

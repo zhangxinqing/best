@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-orange" :isBack="true">
+		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="true">
 			<block slot="backText">返回1</block>
 			<block slot="content">按钮</block>
 		</cu-custom>
@@ -25,55 +25,55 @@
 			</view>
 		</view>
 		<view class="grid col-2 padding-sm">
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-red" data-btncls="bg-red" data-textcls="text-red" @tap="SetTheam">
 				<view class="bg-gradual-red padding radius text-center shadow-blur">
 					<view class="text-lg">魅红</view>
 					<view class="margin-top-sm text-Abc">#f43f3b - #ec008c</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-orange" data-btncls="bg-orange" data-textcls="text-orange" @tap="SetTheam">
 				<view class="bg-gradual-orange padding radius text-center shadow-blur">
 					<view class="text-lg">鎏金</view>
 					<view class="margin-top-sm text-Abc">#ff9700 - #ed1c24</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-green" data-btncls="bg-green" data-textcls="text-green" @tap="SetTheam">
 				<view class="bg-gradual-green padding radius text-center shadow-blur">
 					<view class="text-lg">翠柳</view>
 					<view class="margin-top-sm text-Abc">#39b54a - #8dc63f</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-blue" data-btncls="bg-cyan" data-textcls="text-cyan" @tap="SetTheam">
 				<view class="bg-gradual-blue padding radius text-center shadow-blur">
 					<view class="text-lg">靛青</view>
 					<view class="margin-top-sm text-Abc">#0081ff - #1cbbb4</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-purple" data-btncls="bg-purple" data-textcls="text-purple" @tap="SetTheam">
 				<view class="bg-gradual-purple padding radius text-center shadow-blur">
 					<view class="text-lg">惑紫</view>
 					<view class="margin-top-sm text-Abc">#9000ff - #5e00ff</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-pink" data-btncls="bg-mauve" data-textcls="text-mauve" @tap="SetTheam">
 				<view class="bg-gradual-pink padding radius text-center shadow-blur">
 					<view class="text-lg">霞彩</view>
 					<view class="margin-top-sm text-Abc">#ec008c - #6739b6</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-gray" data-btncls="bg-gray" data-textcls="text-gray" @tap="SetTheam">
 				<view class="bg-gradual-gray padding radius text-center shadow-blur">
 					<view class="text-lg">烟灰</view>
 					<view class="margin-top-sm text-Abc">#8799a3 - #333333</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-grey" data-btncls="bg-grey" data-textcls="text-grey" @tap="SetTheam">
 				<view class="bg-gradual-grey padding radius text-center shadow-blur">
 					<view class="text-lg">玄灰</view>
 					<view class="margin-top-sm text-Abc">#8799a3 - #333333</view>
 				</view>
 			</view>
-			<view class="padding-sm">
+			<view class="padding-sm" data-cls="bg-gradual-black" data-btncls="bg-black" data-textcls="text-black" @tap="SetTheam">
 				<view class="bg-gradual-black padding radius text-center shadow-blur">
 					<view class="text-lg">水墨</view>
 					<view class="margin-top-sm text-Abc">#333333 - #333333</view>
@@ -91,7 +91,8 @@ export default {
 	data() {
 		return {
 			shadow: false,
-			url: '../../../static/logo.png'
+			url: '../../../static/logo.png',
+			Defaulttheam:this.Defaulttheam
 		};
 	},
 	methods: {
@@ -101,6 +102,13 @@ export default {
 		},
 		SetShadow(e) {
 			this.shadow = e.detail.value
+		},
+		SetTheam(e){
+			console.log(e);
+			this.Defaulttheam.headcls=e.currentTarget.dataset.cls;
+			this.Defaulttheam.btncls=e.currentTarget.dataset.btncls;
+			this.Defaulttheam.textcls=e.currentTarget.dataset.textcls;
+			uni.setStorageSync("Defaulttheam",this.Defaulttheam);
 		}
 	},
 	components: {

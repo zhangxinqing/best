@@ -30,8 +30,11 @@
 					
 					Vue.prototype.Defaulttheam={
 						headcls:'bg-gradual-orange',
-						btncls:'bg-grey',
+						btncls:'bg-orange',
 						textcls:'text-orange',
+					}
+					if(uni.getStorageSync("Defaulttheam")){
+						Vue.prototype.Defaulttheam=uni.getStorageSync("Defaulttheam");
 					}
 				}
 			})

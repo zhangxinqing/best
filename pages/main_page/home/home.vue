@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-orange" :isBack="false">
+		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="false">
 			<block slot="backText">返回</block>
 			<block slot="content">首页</block>
 		</cu-custom>
@@ -28,7 +28,7 @@
 				<text class="cuIcon-title text-orange "></text>
 				宫格列表
 			</view>
-			<view class="action"><button class="cu-btn bg-green shadow" @tap="showModal" data-target="gridModal">设置</button></view>
+			<view class="action"><button class="cu-btn shadow" :class="Defaulttheam.btncls" @tap="showModal" data-target="gridModal">设置</button></view>
 		</view>
 		<view class="cu-modal" :class="modalName == 'gridModal' ? 'show' : ''" @tap="hideModal">
 			<view class="cu-dialog" @tap.stop>
@@ -53,7 +53,7 @@
 		<view class="cu-list grid" :class="['col-' + gridCol, gridBorder ? '' : 'no-border']">
 			<view class="cu-item" @tap="toHomelist" v-for="(item, index) in cuIconList" :key="index" v-if="index < gridCol * 2">
 				<view :class="['cuIcon-' + item.cuIcon, 'text-' + item.color]">
-					<view class="cu-tag badge" v-if="item.badge != 0">
+					<view class="cu-tag badge" :class="Defaulttheam.btncls" v-if="item.badge != 0">
 						<block v-if="item.badge != 1">{{ item.badge > 99 ? '99+' : item.badge }}</block>
 					</view>
 				</view>
@@ -74,8 +74,8 @@
 					<view class="desc">
 						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
 						<view>
-							<view class="cu-tag bg-red light sm round">正义天使</view>
-							<view class="cu-tag bg-green light sm round">史诗</view>
+							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
+							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
 						</view>
 					</view>
 				</view>
@@ -89,8 +89,8 @@
 					<view class="desc">
 						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
 						<view>
-							<view class="cu-tag bg-red light sm round">正义天使</view>
-							<view class="cu-tag bg-green light sm round">史诗</view>
+							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
+							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
 						</view>
 					</view>
 				</view>
@@ -104,8 +104,8 @@
 					<view class="desc">
 						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
 						<view>
-							<view class="cu-tag bg-red light sm round">正义天使</view>
-							<view class="cu-tag bg-green light sm round">史诗</view>
+							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
+							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
 						</view>
 					</view>
 				</view>
@@ -119,8 +119,8 @@
 					<view class="desc">
 						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
 						<view>
-							<view class="cu-tag bg-red light sm round">正义天使</view>
-							<view class="cu-tag bg-green light sm round">史诗</view>
+							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
+							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
 						</view>
 					</view>
 				</view>
@@ -134,8 +134,8 @@
 					<view class="desc">
 						<view class="text-content">折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
 						<view>
-							<view class="cu-tag bg-red light sm round">正义天使</view>
-							<view class="cu-tag bg-green light sm round">史诗</view>
+							<view class="cu-tag light sm round" :class="Defaulttheam.btncls">正义天使</view>
+							<view class="cu-tag light sm round"  :class="Defaulttheam.btncls">史诗</view>
 						</view>
 					</view>
 				</view>
@@ -154,6 +154,7 @@
 export default {
 	data() {
 		return {
+			Defaulttheam:this.Defaulttheam,
 			isCard: true,
 			loadProgress: 0,
 			CustomBar: this.CustomBar,

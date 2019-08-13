@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<cu-custom bgColor="bg-gradual-orange" :isBack="false">
+		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="false">
 			<block slot="backText">返回</block>
 			<block slot="content">表单</block>
 		</cu-custom>
@@ -34,6 +34,7 @@
 			
 			
 		</form>
+		<view class="cu-tabbar-height"></view>
 	</view>
 </template>
 
@@ -41,6 +42,7 @@
 	export default {
 		data() {
 			return {
+				Defaulttheam:this.Defaulttheam,
 				imgList: [],
 				modalName: null,
 				textareaAValue: '',
