@@ -75,7 +75,7 @@
     "autoclose": false
   },
   "appname": "best",
-  "compilerVersion": "2.1.6",
+  "compilerVersion": "2.2.1",
   "usingComponents": {
     "ctmainpage": "/pages/main_page/home/home",
     "ctaboutpage": "/pages/main_page/about/about",
