@@ -188,7 +188,9 @@
 			// 点击反馈事件
 			conClick(e) {
 				//this.$refs.circle.conClick(e);
+				//#ifdef H5 || MP-WEIXIN
 				this.currentTab=e.target.dataset.index;
+				//#endif
 			},
 			// 下拉刷新事件 
 			refreshStart(e) {
@@ -264,16 +266,7 @@
 			},
 			//新闻详情
 			goDetail(item, index) {
-				let data = {
-					id: index,
-					title: item.title,
-					author: "详情",
-					time: item.datetime
-				}
-				let url = item.videoSrc ? 'videoDetails' : 'details';
-				uni.navigateTo({
-					url: `/pages/details/${url}?data=${JSON.stringify(data)}`
-				})
+				
 			},
 		}
 	}
