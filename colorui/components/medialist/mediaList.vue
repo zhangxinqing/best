@@ -1,4 +1,5 @@
 <template>
+	<view class='cu-card article solid-bottom no-card'>
 	<view class="cu-item shadow"  v-if="options.title" @click="click">
 		<view class="title"><view class="text-cut">{{options.title}}</view></view>
 		<view class="content">
@@ -13,6 +14,7 @@
 				</view>
 			</view>
 		</view>
+	</view>
 	</view>
 </template>
 

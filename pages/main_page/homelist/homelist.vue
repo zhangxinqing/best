@@ -7,7 +7,7 @@
 			<block slot="content">热点推荐20</block>
 		</cu-custom>
 		<!-- 点击反馈组件 -->
-		<circle ref="circle"></circle>
+		
 		<!-- 下拉刷新组件 传入刷新事件 -->
 		<refresh ref="refresh" :isRefresh="isRefresh"></refresh>
 		<view class='bg-gradual-orange'>
@@ -22,9 +22,9 @@
 				<scroll-view style="height: 100%;" scroll-y="true" @scrolltolower="loadMore">
 					<view style="width: 100%;height: 80upx;"></view>
 					<view class='content'>
-						<view class='cu-card article solid-bottom no-card' v-for="(item,index) in listItem" v-if="listItem.length > 0" :key="index">
+						<view v-for="(item,index) in listItem" v-if="listItem.length > 0 && index<listIndex+1" :key="index">
 							<!-- {{item}} -->
-							<media-list :options="item" @close="close(listItem,index)" @click="goDetail(item,index)"></media-list>
+							<mediaList :options="item" @close="close(listItem,index)" @click="goDetail(item,index)"></mediaList>
 						</view>
 					</view>
 					<view class='noCard' v-if="listItem.length===0">
@@ -39,7 +39,6 @@
 <script>
 	var startX = 0
 	// 引入下拉刷新和点击反馈组件
-	import circle from '@/colorui/components/circle.vue';
 	import refresh from "@/colorui/components/refresh.vue"
 	import navTab from "@/colorui/components/navTab.vue"
 	import uniIcon from "@/colorui/components/uni-icon/uni-icon.vue"
@@ -104,7 +103,6 @@
 	export default {
 		components: {
 			refresh,
-			circle,
 			navTab,
 			uniIcon,
 			mediaList
@@ -189,9 +187,10 @@
 			},
 			// 点击反馈事件
 			conClick(e) {
-				this.$refs.circle.conClick(e);
+				//this.$refs.circle.conClick(e);
+				this.currentTab=e.target.dataset.index;
 			},
-			// 下拉刷新事件
+			// 下拉刷新事件 
 			refreshStart(e) {
 				this.$refs.refresh.refreshStart(e);
 			},
