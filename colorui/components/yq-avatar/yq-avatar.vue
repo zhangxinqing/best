@@ -1,11 +1,12 @@
 <template name="yq-avatar">
+	
 	<view>
-		<image :src="imgSrc.imgSrc" @click="fSelect" :style="[ imgStyle ]" class="my-avatar"></image>
+		<image :src="imgSrc.imgSrc" @click="fSelect" :style="imgStyle" class="my-avatar"></image>
 		<canvas canvas-id="avatar-canvas" id="avatar-canvas" class="my-canvas" :style="{top: styleTop, height: cvsStyleHeight}" disable-scroll="false"></canvas>
 		<canvas canvas-id="oper-canvas" id="oper-canvas" class="oper-canvas" :style="{top: styleTop, height: cvsStyleHeight}" disable-scroll="false" @touchstart="fStart" @touchmove="fMove" @touchend="fEnd"></canvas>
 		<canvas canvas-id="prv-canvas" id="prv-canvas" class="prv-canvas" disable-scroll="false" @touchstart="fHideImg"	:style="{ height: cvsStyleHeight, top: prvTop }"></canvas>
 		<view class="oper-wrapper" :style="{display: styleDisplay}">
-			<view class="oper">
+			 <view class="oper">
 				<view class="btn-wrapper" v-if="showOper">
 					<view @click="fSelect"  hover-class="hover" :style="{width: btnWidth}"><text>重选</text></view>
 					<view @click="fClose"  hover-class="hover" :style="{width: btnWidth}"><text>关闭</text></view>
@@ -19,7 +20,7 @@
 					<view @click="fPrvUpload"  hover-class="hover" :style="{width: btnWidth}"><text>上传</text></view>
 				</view>
 			</view>
-		</view>
+		</view> 
 	</view>
 </template>
 	

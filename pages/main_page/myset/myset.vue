@@ -10,10 +10,9 @@
 			</view>
 		</view>
 		<view class="padding flex flex-direction">
-			<avatar selWidth="200px" selHeight="400upx" @upload="myUpload" :avatarSrc="url" avatarStyle="width: 200upx; height: 200upx; border-radius: 100%;"></avatar>
-			
+			<avatar selWidth="200rpx" selHeight="200rpx" @upload="myUpload" :avatarSrc="url" avatarStyle="width: 200rpx; height: 200rpx; border-radius: 100%;"></avatar>
 		</view>
-		<!-- <wm-poster imgSrc="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" QrSrc="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" Title="标题文本" PriceTxt="价格显示" OriginalTxt="划线价显示"></wm-poster> -->
+		<wmPoster imgSrc="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" QrSrc="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" Title="标题文本" PriceTxt="价格显示" OriginalTxt="划线价显示"></wmPoster>
 		<view class="cu-bar margin-top bg-white">
 			<view class="action">
 				<text class="cuIcon-title text-blue"></text>
@@ -87,11 +86,11 @@
 import avatar from '@/colorui/components/yq-avatar/yq-avatar.vue';
 import wmPoster from '@/colorui/components/wm-poster/wm-poster.vue';
 export default {
-	components: { wmPoster },
+	components: { wmPoster,avatar },
 	data() {
 		return {
 			shadow: false,
-			url: '../../../static/logo.png',
+			url: '/static/default-skin/big10006.jpg',
 			Defaulttheam:this.Defaulttheam
 		};
 	},
