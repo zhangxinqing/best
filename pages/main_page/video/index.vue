@@ -1,6 +1,5 @@
 <template>
-	<view>
-		<view class="cu-card page">
+	<view style="position: absolute;top: 0;bottom: 0;">
 			<view class="video-view" :style="containerStyle">
 				<video
 					class="video"
@@ -24,7 +23,6 @@
 					<cover-image class="controls-share" @tap="tapShare" src="http://www.91jdj.cn/attachment/images/69/2019/08/p9fwD74jk4nX9kqxTd4xZjJo6Jf649.png"></cover-image>
 				</video>
 			</view>
-		</view>
 	</view>
 </template>
 <script>
@@ -307,6 +305,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+	.video-view{
+		position: fixed;
+	}
 .controls-play {
 	position: absolute;
 	bottom: 90upx;
@@ -322,7 +323,9 @@ export default {
 .video {
 	width: 100%;
 	height: 100vh;
-	position: relative;
+	position:fixed;
+	top: 0rpx;
+	bottom: 0rpx;
 	display: block;
 }
 .cover-view-left {
