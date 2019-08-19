@@ -33,7 +33,10 @@
 		},
 		{
 		    "path" : "pages/main_page/video/index",
-		    "style" : {}
+		    "style": {
+				"disableScroll":true,
+		            "navigationBarTitleText": "首页"
+		          }
 		},
 		{
 			"path": "pages/index/index",

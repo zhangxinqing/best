@@ -3,7 +3,7 @@
 			<view class="video-view" :style="containerStyle">
 				<video
 					class="video"
-					:id="`video_${index}`"
+					id="video"
 					:key="index"
 					:data-id="index"
 					autoplay="true"
@@ -29,6 +29,7 @@
 export default {
 	data() {
 		return {
+			scrollTop:0,
 			title: '无意者 烈火焚身;以正义的烈火拔出黑暗',
 			videoCtx: null,
 			listTouchStartY: 0,
@@ -115,42 +116,36 @@ export default {
 			title: this.title
 		});
 	},
+	onPageScroll(e) {
+		console.log(JSON.stringify(e));
+		if(this.scrollTop==0){
+			this.scrollTop=e.scrollTop;
+			if(this.scrollTop>0){
+				this.index++;
+				console.log("下一个视频"+this.index);
+				if (this.index < 0) {
+					this.index = this.videoList.length - 1;
+				}
+			}
+			if(this.scrollTop<0){
+				this.index--;
+				console.log("上一个视频"+this.index);
+				if (this.index == this.videoList.length) {
+					this.index = 0;
+				}
+			}
+			
+		}
+		if(e.scrollTop==0){
+			this.playvideo = this.videoList[this.index];
+			console.log("播放视频"+this.index);
+			this.videoCtx = uni.createVideoContext('video');
+			this.videoCtx.play();
+			this.scrollTop=e.scrollTop;
+		}
+	},
 	async mounted() {
-		//#ifdef APP-PLUS
-		const subNVue = uni.getSubNVueById('concat');
-		// 打开 nvue 子窗体
-		subNVue.show('slide-in-left', 100, () => {
-			uni.$on('ListTouchStart', e => {
-				this.listTouchStartY = e.changedTouches[0].pageY;
-			});
-			uni.$on('ListTouchMove', e => {
-				this.ListTouchMoveY(e.changedTouches[0].pageY);
-			});
-			uni.$on('ListTouchEnd', () => {
-				this.ListTouchEnd();
-			});
-			uni.$on('tapLove', () => {
-				if (this.scroll) return;
-				this.tapLove();
-			});
-			uni.$on('tapMsg', () => {
-				if (this.scroll) return;
-				this.tapMsg();
-			});
-			uni.$on('tapShare', () => {
-				if (this.scroll) return;
-				this.tapShare();
-			});
-			uni.$on('tapCover', () => {
-				if (this.scroll) return;
-				this.videoPlay(this.id);
-			});
-			uni.$on('tapAvater', () => {
-				if (this.scroll) return;
-				this.tapAvater();
-			});
-		});
-		//#endif
+		
 	},
 	methods: {
 		pushVideoList() {
