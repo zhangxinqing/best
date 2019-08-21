@@ -1,9 +1,28 @@
 <template>
 	<view>
-		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="false">
-			<block slot="backText">返回</block>
-			<block slot="content">表单</block>
-		</cu-custom>
+		
+		<view class="wrap">
+		
+		</view>
+		<swiper
+		class="card-swiper"
+			:class="dotStyle ? 'square-dot' : 'round-dot'"
+			:indicator-dots="true"
+			:circular="true"
+			:autoplay="true"
+			interval="5000"
+			duration="500"
+			@change="cardSwiper"
+			indicator-color="#8799a3"
+			indicator-active-color="#0081ff"
+		>
+			<swiper-item @tap="toHomelist2" v-for="(item, index) in swiperList" :key="index" :class="cardCur == index ? 'cur' : ''">
+				<view class="swiper-item">
+					<image :src="item.url" mode="aspectFill" v-if="item.type == 'image'"></image>
+					<video :src="item.url" autoplay loop muted :show-play-btn="false" :controls="false" objectFit="cover" v-if="item.type == 'video'"></video>
+				</view>
+			</swiper-item>
+		</swiper>
 		<form>
 			<!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 -->
 			<view class="cu-form-group margin-top">
@@ -48,6 +67,43 @@
 				imgList: [],
 				modalName: null,
 				textareaAValue: '',
+				swiperList: [
+					{
+						id: 0,
+						type: 'image',
+						url: '/static/default-skin/big84000.jpg'
+					},
+					{
+						id: 1,
+						type: 'image',
+						url: '/static/default-skin/big37006.jpg'
+					},
+					{
+						id: 2,
+						type: 'image',
+						url: '/static/default-skin/big39000.jpg'
+					},
+					{
+						id: 3,
+						type: 'image',
+						url: '/static/default-skin/big10001.jpg'
+					},
+					{
+						id: 4,
+						type: 'image',
+						url: '/static/default-skin/big25011.jpg'
+					},
+					{
+						id: 5,
+						type: 'image',
+						url: '/static/default-skin/big21016.jpg'
+					},
+					{
+						id: 6,
+						type: 'image',
+						url: '/static/default-skin/big99008.jpg'
+					}
+				]
 			};
 		},
 		methods: {
@@ -95,5 +151,32 @@
 <style>
 	.cu-form-group .title {
 		min-width: calc(4em + 15px);
+	}
+	
+	.wrap::before {
+		background:url("/static/default-skin/big25011.jpg") 0 / cover fixed;
+	}
+	.wrap {
+		position:relative;
+		margin:0 auto;
+		padding:0em;
+		width: 100%;
+		height: 80rpx;
+		background:hsla(0,0%,100%,.25) border-box;
+		overflow:hidden;
+		
+		text-shadow:0 1px 1px hsla(0,0%,100%,.3);
+	}
+	.wrap::before {
+		content:'';
+		position:absolute;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		margin:-30px;
+		z-index:-1;
+		-webkit-filter:blur(20px);
+		filter:blur(20px);
 	}
 </style>

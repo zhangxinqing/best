@@ -2,7 +2,7 @@
 	
 	<!-- conClick为点击反馈事件 其他touch为下拉刷新事件 -->
 	<view class="pagecontent" @click="conClick" @touchstart="refreshStart" @touchmove="refreshMove" @touchend="refreshEnd">
-		<cu-custom :bgColor="Defaulttheam.headcls" :isBack="true">
+		<cu-custom :bgImage="tabBars[currentTab].bg"  :isBack="false">
 			<block slot="backText">返回</block>
 			<block slot="content">热点推荐20</block>
 		</cu-custom>
@@ -22,7 +22,7 @@
 				<scroll-view style="height: 100%;" scroll-y="true" @scrolltolower="loadMore">
 					<view style="width: 100%;height: 80upx;"></view>
 					<view class='content'>
-						<view v-for="(item,index) in listItem" v-if="listItem.length > 0 && index<listIndex+1" :key="index">
+						<view v-for="(item,index) in listItem" v-if="listItem.length > 0" :key="index">
 							<!-- {{item}} -->
 							<mediaList :options="item" @close="close(listItem,index)" @click="goDetail(item,index)"></mediaList>
 						</view>
@@ -46,7 +46,7 @@
 	var listData = [{
 			"datetime": "40分钟前",
 			"article_type": 0,
-			"title": "uni-app行业峰会频频亮相，开发者反响热烈!",
+			"title": "1.uni-app行业峰会频频亮相，开发者反响热烈!",
 			"source": "DCloud",
 			"comment_count": 639,
 			videoSrc: true
@@ -54,7 +54,7 @@
 		{
 			"datetime": "一天前",
 			"article_type": 1,
-			"title": "DCloud完成B2轮融资，uni-app震撼发布!",
+			"title": "2.DCloud完成B2轮融资，uni-app震撼发布!",
 			"image_url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
 			"source": "DCloud",
 			"comment_count": 11395,
@@ -63,7 +63,7 @@
 		{
 			"datetime": "一天前",
 			"article_type": 2,
-			"title": "中国技术界小奇迹：HBuilder开发者突破200万",
+			"title": "3.中国技术界小奇迹：HBuilder开发者突破200万",
 			"image_url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/muwu.jpg?imageView2/3/w/200/h/100/q/90",
 			"source": "DCloud",
 			"comment_count": 11395,
@@ -85,7 +85,7 @@
 				"height": 360
 			}],
 			"datetime": "5分钟前",
-			"title": "uni-app 支持使用 npm 安装第三方包，生态更趋丰富",
+			"title": "4.uni-app 支持使用 npm 安装第三方包，生态更趋丰富",
 			"source": "DCloud",
 			"comment_count": 11,
 			videoSrc: true
@@ -93,7 +93,7 @@
 		{
 			"datetime": "2小时前",
 			"article_type": 4,
-			"title": "uni-app 支持原生小程序自定义组件，更开放、更自由",
+			"title": "5.uni-app 支持原生小程序自定义组件，更开放、更自由",
 			"image_url": "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/cbd.jpg?imageView2/3/w/200/h/100/q/90",
 			"source": "DCloud",
 			"comment_count": 69,
@@ -117,31 +117,40 @@
 				pages: [], //第几页存储 
 				tabBars: [{
 					name: '关注',
-					id: 'guanzhu'
+					id: 'guanzhu',
+					bg:'/static/default-skin/bg1.jpg'
 				}, {
 					name: '推荐',
-					id: 'tuijian'
+					id: 'tuijian',
+					bg:'/static/default-skin/bg2.jpg'
 				}, {
 					name: '体育',
-					id: 'tiyu'
+					id: 'tiyu',
+					bg:'/static/default-skin/bg3.jpg'
 				}, {
 					name: '热点',
-					id: 'redian'
+					id: 'redian',
+					bg:'/static/default-skin/bg4.jpg'
 				}, {
 					name: '财经',
-					id: 'caijing'
+					id: 'caijing',
+					bg:'/static/default-skin/bg5.jpg'
 				}, {
 					name: '娱乐',
-					id: 'yule'
+					id: 'yule',
+					bg:'/static/default-skin/bg6.jpg'
 				}, {
 					name: '军事',
-					id: 'junshi'
+					id: 'junshi',
+					bg:'/static/default-skin/bg1.jpg'
 				}, {
 					name: '历史',
-					id: 'lishi'
+					id: 'lishi',
+					bg:'/static/default-skin/bg2.jpg'
 				}, {
 					name: '本地',
-					id: 'bendi'
+					id: 'bendi',
+					bg:'/static/default-skin/bg3.jpg'
 				}],
 				list: [
 					listData,
