@@ -1,3 +1,6 @@
+.video-view.data-v-58a3010a {
+  position: fixed;
+}
 .controls-play.data-v-58a3010a {
   position: absolute;
   bottom: 90rpx;
@@ -13,7 +16,9 @@
 .video.data-v-58a3010a {
   width: 100%;
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0rpx;
+  bottom: 0rpx;
   display: block;
 }
 .cover-view-left.data-v-58a3010a {

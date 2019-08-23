@@ -42,6 +42,7 @@
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white"
   },
+  "usingComponents": {},
   "tabBar": {
     "color": "#ffffff",
     "selectedColor": "#f37b1d",
@@ -75,15 +76,5 @@
     "autoclose": false
   },
   "appname": "best",
-  "compilerVersion": "2.1.6",
-  "usingComponents": {
-    "ctmainpage": "/pages/main_page/home/home",
-    "ctaboutpage": "/pages/main_page/about/about",
-    "ctpost": "/pages/main_page/post/post",
-    "ctmy": "/pages/main_page/my/my",
-    "basics": "/pages/basics/home",
-    "components": "/pages/component/home",
-    "plugin": "/pages/plugin/home",
-    "cu-custom": "/colorui/components/cu-custom"
-  }
+  "compilerVersion": "2.2.1"
 }

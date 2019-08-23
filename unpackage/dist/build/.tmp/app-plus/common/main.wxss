@@ -4938,16 +4938,57 @@ scroll-view.cu-steps .cu-item {
 }
 
 
-.cu-form-group .title {
-	min-width: calc(4em + 15px);
+.page {
+	height: 100vh;
 }
 
 
-.user-avatar{
+.page {
+	height: 100vh;
+}
+
+
+.page {
+	height: 100vh;
+}
+.cardTitle {
+	color: #fff;
+	padding: 90rpx 60rpx;
+	font-size: 40rpx;
+	font-weight: 300;
+	-webkit-transform: skew(-10deg, 0deg);
+	    -ms-transform: skew(-10deg, 0deg);
+	        transform: skew(-10deg, 0deg);
+	position: relative;
+	text-shadow: 0px 0px 6rpx rgba(0, 0, 0, 0.3)
+}
+.cardTitle::before {
+	content: "";
 	position: absolute;
-	top: 15px;
-	width: 66px;
-	left: 3px;
-	height: 66px;
+	width: 60rpx;
+	height: 6rpx;
+	border-radius: 20rpx;
+	background-color: #fff;
+	display: block;
+	top: 60rpx;
+	left: 50rpx;
+	-webkit-transform: skew(10deg, 0deg);
+	    -ms-transform: skew(10deg, 0deg);
+	        transform: skew(10deg, 0deg);
+}
+.cardTitle::after {
+	content: "";
+	position: absolute;
+	width: 140rpx;
+	border-radius: 6rpx;
+	height: 24rpx;
+	background-color: #fff;
+	display: block;
+	bottom: 76rpx;
+	left: 90rpx;
+	-webkit-transform: skew(10deg, 0deg);
+	    -ms-transform: skew(10deg, 0deg);
+	        transform: skew(10deg, 0deg);
+	opacity: 0.1;
 }
 

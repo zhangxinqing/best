@@ -1,6 +1,3 @@
 {
-  "usingComponents": {
-    "cu-custom": "/colorui/components/cu-custom",
-    "wm-poster": "/colorui/components/wm-poster/wm-poster"
-  }
+  "usingComponents": {}
 }

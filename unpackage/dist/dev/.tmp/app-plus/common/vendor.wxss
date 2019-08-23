@@ -1,0 +1,40 @@
+
+.cu-form-group .title {
+	min-width: calc(4em + 15px);
+}
+.wrap::before {
+	background: url('/static/default-skin/big25011.jpg') 0 / cover fixed;
+}
+.wrap {
+	position: relative;
+	margin: 0 auto;
+	padding: 0em;
+	width: 100%;
+	height: 80rpx;
+	background: hsla(0, 0%, 100%, 0.25) border-box;
+	overflow: hidden;
+
+	text-shadow: 0 1px 1px hsla(0, 0%, 100%, 0.3);
+}
+.wrap::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: -30px;
+	z-index: -1;
+	-webkit-filter: blur(20px);
+	filter: blur(20px);
+}
+
+
+.user-avatar{
+	position: absolute;
+	top: 15px;
+	width: 66px;
+	left: 3px;
+	height: 66px;
+}
+
