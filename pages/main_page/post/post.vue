@@ -8,7 +8,7 @@
 		<form>
 			<!-- !!!!! placeholder 在ios表现有偏移 建议使用 第一种样式 -->
 			<view class="cu-form-group margin-top">
-				<textarea maxlength="-1" :disabled="modalName != null" @input="textareaAInput" placeholder=""></textarea>
+				<textarea maxlength="-1" :disabled="modalName != null" @input="textareaAInput" placeholder="你想说什么都行..."></textarea>
 			</view>
 			<view class="cu-bar bg-white margin-top">
 				<view class="action">图片上传</view>
@@ -24,12 +24,12 @@
 				</view>
 			</view>
 			<view class="cu-form-group" @tap="getRegeo">
-				<text class='cuIcon-locationfill text-orange'></text>
+				<text class='cuIcon-locationfill ' :class="Defaulttheam.textcls"></text>
 				<input placeholder="输入框带个图标" v-if="geoadd" name="input" :value="geoadd.addresses"></input>
 			</view>
 			<view class="cu-form-group" @tap="getRegeo"  v-if="geoadd">
 				{{geoadd.address.city}}{{geoadd.address.district}}{{geoadd.address.street}}{{geoadd.address.streetNum}}
-			</view>
+			</view> 
 			<view class="padding"><button class="cu-btn block margin-tb-sm lg" :class="Defaulttheam.btncls" type="">提交</button></view>
 			
 		</form>
