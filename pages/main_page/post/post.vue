@@ -27,9 +27,12 @@
 				<text class='cuIcon-locationfill ' :class="Defaulttheam.textcls"></text>
 				<input placeholder="输入框带个图标" v-if="geoadd" name="input" :value="geoadd.addresses"></input>
 			</view>
-			<view class="cu-form-group" @tap="getRegeo"  v-if="geoadd">
+			<view class="cu-form-group" @tap="chooseRegeo"  v-if="geoadd">
 				{{geoadd.address.city}}{{geoadd.address.district}}{{geoadd.address.street}}{{geoadd.address.streetNum}}
 			</view> 
+			<view class="cu-form-group">
+				<map id="gdmap" style="width:100%;height: 300rpx;"></map>
+			</view>
 			<view class="padding"><button class="cu-btn block margin-tb-sm lg" :class="Defaulttheam.btncls" type="">提交</button></view>
 			
 		</form>
@@ -42,6 +45,7 @@
 export default {
 	data() {
 		return {
+			gdmapContent:null,
 			address: null,
 			geoadd:null,
 			Defaulttheam: this.Defaulttheam,
@@ -89,6 +93,7 @@ export default {
 	},
 	onLoad() {
 		this.getRegeo();
+		
 	},
 	methods: {
 		ChooseImage() {
@@ -132,8 +137,24 @@ export default {
 			plus.geolocation.getCurrentPosition(function(res){
 				that.address = JSON.stringify(res);
 				that.geoadd=res;
+				that.gdmapContent=uni.createMapContext("gdmap",that);
+				
+				that.gdmapContent.moveToLocation();
+				
 			});
 		},
+		chooseRegeo(){
+			let that=this;
+			uni.chooseLocation({
+			    success: function (res) {
+					that.geoadd.addresses=res.name;
+			        console.log('位置名称：' + res.name);
+			        console.log('详细地址：' + res.address);
+			        console.log('纬度：' + res.latitude);
+			        console.log('经度：' + res.longitude);
+			    }
+			});
+		}
 
 	}
 };
