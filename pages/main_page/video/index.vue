@@ -1,48 +1,40 @@
 <template>
 	<view style="position: absolute;top: 0;bottom: 0;">
-			<view class="video-view" :style="containerStyle">
-				<video
-					class="video"
-					id="video"
-					:key="index"
-					:data-id="index"
-					autoplay="true"
-					:src="playvideo.src"
-					controls
-					@tapVideo="videoPlay(index)"
-					@touchstart="ListTouchStart"
-					@touchmove="ListTouchMove"
-					@touchend="ListTouchEnd"
-				>
-					<cover-view class="controls-title">{{ playvideo.title }}</cover-view>
-					<cover-view class="controls-price">来源 作者丁小白推荐</cover-view>
-					<cover-image class="controls-play img" @click="play" :src="playvideo.picture"></cover-image>
-					<cover-image class="avater img" @tap.stop="tapAvater" :src="playvideo.avater"></cover-image>
-					<cover-image class="aixin img" @tap.stop="tapLove" src="http://www.91jdj.cn/attachment/images/69/2019/08/uSUKnTofUn0SfuwRn3SgO4WtTso3R3.png"></cover-image>
-					<cover-image class="xiaoxi img" @tap.stop="tapMsg" src="http://www.91jdj.cn/attachment/images/69/2019/08/QKyhcbbxYcuYHhKHbCb3sc3HZQIuYc.png"></cover-image>
-					<cover-image class="controls-share" @tap="tapShare" src="http://www.91jdj.cn/attachment/images/69/2019/08/p9fwD74jk4nX9kqxTd4xZjJo6Jf649.png"></cover-image>
-				</video>
-			</view>
+		<view class="video-view">
+			<video
+				class="video"
+				id="video"
+				:data-id="index"
+				autoplay="true"
+				:src="playvideo.src"
+				controls
+				@tapVideo="videoPlay(index)"
+				@touchstart="ListTouchStart"
+				@touchmove="ListTouchMove"
+				@touchend="ListTouchEnd"
+			>
+				<cover-view class="controls-box"></cover-view>
+				<cover-image class="controls-box-left" :src="playvideo.picture"></cover-image>
+				<cover-view class="controls-box-left-pf">京东</cover-view>
+				<cover-view class="controls-box-left-title">{{ scrollTop }}-{{ index }}-{{ playvideo.title }}</cover-view>
+				<cover-view class="controls-box-right"></cover-view>
+				<cover-image class="controls-share" @tap="tapShare" src="http://www.91jdj.cn/attachment/images/69/2019/08/p9fwD74jk4nX9kqxTd4xZjJo6Jf649.png"></cover-image>
+			</video>
+		</view>
 	</view>
 </template>
 <script>
 export default {
 	data() {
 		return {
-			scrollTop:0,
-			title: '无意者 烈火焚身;以正义的烈火拔出黑暗',
+			scrollTop: 0,
 			videoCtx: null,
 			listTouchStartY: 0,
-			listTouchDirection: null,
-			containerStyle: '',
-			sysheight: 0,
-			distance: 0,
-			scroll: false,
-			id: 0,
+			listTouchPageY: 0,
 			index: 0,
 			playvideo: {
 				title: '无意者 烈火焚身;以正义的烈火拔出黑暗',
-				src: 'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167057&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
+				src:'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167057&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
 				content: '123',
 				flag: false,
 				check: true,
@@ -52,8 +44,7 @@ export default {
 			videoList: [
 				{
 					title: '无意者 烈火焚身;以正义的烈火拔出黑暗',
-					src:
-						'https://dcloud-img.oss-cn-hangzhou.aliyuncs.com/guide/uniapp/%E7%AC%AC1%E8%AE%B2%EF%BC%88uni-app%E4%BA%A7%E5%93%81%E4%BB%8B%E7%BB%8D%EF%BC%89-%20DCloud%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B@20181126.mp4',
+					src:'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167057&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
 					content: '456',
 					flag: false,
 					check: false,
@@ -62,7 +53,7 @@ export default {
 				},
 				{
 					title: '真正的恩典因不完整而美丽',
-					src: 'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167057&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
+					src:'http://baobab.kaiyanapp.com/api/v1/playUrl?vid=167805&resourceType=video&editionType=default&source=aliyun&playUrlType=url_oss',
 					content: '123',
 					flag: false,
 					check: true,
@@ -110,89 +101,46 @@ export default {
 		};
 	},
 	onLoad(event) {
-		this.sysheight = uni.getSystemInfoSync().windowHeight;
-		this.title = event.title ? event.title : '无意者 烈火焚身;以正义的烈火拔出黑暗';
 		uni.setNavigationBarTitle({
-			title: this.title
+			title: '视频播放'
 		});
 	},
 	onPageScroll(e) {
+		//兼容ios用
 		console.log(JSON.stringify(e));
-		if(this.scrollTop==0){
-			this.scrollTop=e.scrollTop;
-			if(this.scrollTop>0){
+		if (this.scrollTop == 0) {
+			if (e.scrollTop > 0) {
 				this.index++;
-				console.log("下一个视频"+this.index);
+				console.log('下一个视频' + this.index);
+				if (this.index > this.videoList.length - 1) {
+					this.index = 0;
+				}
+				this.scrollTop = e.scrollTop;
+			}
+			if (e.scrollTop < 0) {
+				this.scrollTop = e.scrollTop;
+				this.index--;
+				console.log('上一个视频' + this.index);
 				if (this.index < 0) {
 					this.index = this.videoList.length - 1;
 				}
+				this.scrollTop = e.scrollTop;
 			}
-			if(this.scrollTop<0){
-				this.index--;
-				console.log("上一个视频"+this.index);
-				if (this.index == this.videoList.length) {
-					this.index = 0;
-				}
-			}
-			
 		}
-		if(e.scrollTop==0){
+		if (e.scrollTop == 0) {
+			this.scrollTop = 0;
 			this.playvideo = this.videoList[this.index];
-			console.log("播放视频"+this.index);
+			console.log('播放视频' + this.index);
 			this.videoCtx = uni.createVideoContext('video');
 			this.videoCtx.play();
-			this.scrollTop=e.scrollTop;
 		}
 	},
-	async mounted() {
-		
-	},
+	async mounted() {},
 	methods: {
-		pushVideoList() {
-			let promise = new Promise((resolve, reject) => {
-				uni.request({
-					url: 'https://api.apiopen.top/videoRecommend?id=127397',
-					success: res => {
-						let videoGroup = [];
-						for (let item of res.data.result) {
-							//限制3条
-							if (item.type == 'videoSmallCard' && videoGroup.length < 3) {
-								videoGroup.push({
-									src: item.data.playUrl,
-									content: item.data.description,
-									flag: false,
-									check: false,
-									avater: item.data.author.icon
-								});
-							}
-						}
-						this.videoList = [...this.videoList, ...videoGroup];
-						resolve();
-					}
-				});
-			});
-			return promise;
-		},
-		tapLove() {
-			this.videoList[this.id].check = !this.videoList[this.id].check;
-			this.videoList = [...this.videoList];
-		},
-		tapAvater() {
-			uni.showToast({
-				icon: 'none',
-				title: `点击索引为${this.id}的头像`
-			});
-		},
-		tapMsg() {
-			uni.showToast({
-				icon: 'none',
-				title: `查看索引为${this.id}的评论`
-			});
-		},
 		tapShare() {
 			uni.showToast({
 				icon: 'none',
-				title: `分享索引为${this.id}的视频`
+				title: `分享索引为${this.index}的视频`
 			});
 			return false;
 		},
@@ -202,111 +150,97 @@ export default {
 		},
 		// ListTouch计算方向
 		ListTouchMove(e) {
-			this.ListTouchMoveY(e.touches[0].pageY);
-		},
-		ListTouchMoveY(Y) {
-			//该视频向上
-			this.listTouchDirection = this.listTouchStartY - Y > 80 ? -1 : 0;
-			console.log('向上' + this.listTouchDirection);
-			//该视频向下
-			this.listTouchDirection = Y - this.listTouchStartY > 80 ? 1 : this.listTouchDirection;
-
-			console.log('向下' + this.listTouchDirection);
-
-			const distance = this.distance + Y - this.listTouchStartY;
-			if (distance > 0) return;
-			//this.containerStyle = `transform:translate3d(0, ${distance}px, 0)`
-			if (this.listTouchStartY - Y < 10 && this.listTouchStartY - Y > -10) {
-				this.listTouchDirection = null;
-			}
+			console.log('移动开始位置：' + this.listTouchStartY);
+			console.log('移动位置：' + e.touches[0].pageY);
+			this.listTouchPageY = e.touches[0].pageY;
 		},
 		// ListTouch计算滚动
 		async ListTouchEnd(e) {
-			if (this.scroll) return;
 			const id = this.id;
-			console.log(this.listTouchDirection);
-			if (this.listTouchDirection == -1) {
-				console.log('向上');
+			let isup = 1;
+			console.log(this.listTouchStartY);
+			if(this.listTouchPageY==0){
+				return;
+			}
+			if (this.listTouchStartY < this.listTouchPageY) {
+				isup = 1;
 				this.index++;
+				console.log('向上翻视频');
 				if (this.index == this.videoList.length) {
 					this.index = 0;
 				}
-				this.playvideo = this.videoList[this.index];
 			}
-			if (this.listTouchDirection == 1) {
-				console.log('向下');
+			if (this.listTouchStartY > this.listTouchPageY) {
+				isup = -1;
+				console.log('向下翻视频');
 				this.index--;
 				if (this.index < 0) {
 					this.index = this.videoList.length - 1;
 				}
-				console.log(this.videoList[this.index]);
-				this.playvideo = this.videoList[this.index];
 			}
-			this.videoCtx = uni.createVideoContext(`video_${this.index}`);
+			this.listTouchPageY=0;
+			this.playvideo = this.videoList[this.index];
+			this.videoCtx = uni.createVideoContext(`video`);
 			this.videoCtx.play();
-			// if(id == this.videoList.length-2){
-			// 	this.pushVideoList()
-			// }
-			// //点击事件
-			// if(!this.listTouchDirection&&this.listTouchDirection!=0){
-			// 	return
-			// }
-			// const destination = this.listTouchDirection*this.sysheight+this.distance
-			// //不允许滚动出列表
-			// if(destination>0||destination<-this.sysheight*(this.videoList.length-1)) return
-			// this.videoCtx = uni.createVideoContext(`video_${id}`);
-			// this.videoList[id].flag = !this.videoList[id].flag
-			// this.videoCtx.pause();
-			// //开始滚动
-			// await this.animate(destination, this.listTouchDirection)
-			// this.videoCtx = uni.createVideoContext(`video_${id-this.listTouchDirection}`);
-			// this.videoList[id-this.listTouchDirection].flag = !this.videoList[id-this.listTouchDirection].flag
-			// this.videoCtx.play();
-			// this.id = this.id-this.listTouchDirection
-			// this.listTouchDirection = null
 		},
 		videoPlay(id) {
 			if (!this.videoList[id].flag) {
-				this.videoCtx = uni.createVideoContext(`video_${id}`);
+				this.videoCtx = uni.createVideoContext(`video`);
 				this.videoCtx.play();
 			} else {
-				this.videoCtx = uni.createVideoContext(`video_${id}`);
+				this.videoCtx = uni.createVideoContext(`video`);
 				this.videoCtx.pause();
 			}
 			this.videoList[id].flag = !this.videoList[id].flag;
-		},
-		animate(des, direc) {
-			let { distance } = this;
-			let promise = new Promise((resolve, reject) => {
-				this.scroll = true;
-				const temp = setInterval(() => {
-					console.log('视频滑动');
-					if ((direc === -1 && des < distance) || (direc === 1 && des > distance)) {
-						distance += 3000 * direc;
-						//this.containerStyle = `transform:translate3d(0, ${distance}px, 0)`
-					} else {
-						clearInterval(temp);
-						distance = des;
-						this.distance = des;
-						//this.containerStyle = `transform:translate3d(0, ${distance}px, 0)`
-						this.scroll = false;
-						resolve();
-					}
-				}, 0);
-			});
-			return promise;
 		}
 	}
 };
 </script>
 <style lang="scss" scoped>
-	.video-view{
-		position: fixed;
-	}
-.controls-play {
+.controls-box {
+	background: #ffffff;
 	position: absolute;
+	width: 650rpx;
+	height: 200rpx;
 	bottom: 90upx;
 	left: 50rpx;
+	border-radius: 10rpx;
+}
+.controls-box-right {
+	background: #fbbd08;
+	position: absolute;
+	width: 100rpx;
+	height: 200rpx;
+	right: 50rpx;
+	bottom: 90upx;
+	border-top-right-radius: 10rpx;
+	border-bottom-right-radius: 10rpx;
+}
+.controls-box-left {
+	position: absolute;
+	width: 200rpx;
+	height: 200rpx;
+	left: 50rpx;
+	bottom: 90upx;
+	border-radius: 10rpx;
+}
+.controls-box-left-pf {
+	position: absolute;
+	width: 50rpx;
+	left: 255rpx;
+	bottom: 250upx;
+	font-size: 24rpx;
+	padding-left: 8rpx;
+	border-radius: 10rpx;
+	color: #ffffff;
+	background-color: #5e00ff;
+}
+.controls-box-left-title {
+	position: absolute;
+	width: 270rpx;
+	left: 320rpx;
+	bottom: 250upx;
+	font-size: 24rpx;
 }
 .controls-share {
 	right: 50rpx;
@@ -315,83 +249,16 @@ export default {
 	top: 10%;
 	position: absolute;
 }
+.video-view {
+	position: fixed;
+}
+
 .video {
 	width: 100%;
 	height: 100vh;
-	position:fixed;
+	position: fixed;
 	top: 0rpx;
 	bottom: 0rpx;
 	display: block;
-}
-.cover-view-left {
-	position: absolute;
-	margin-left: 10upx;
-	width: 80%;
-	color: #ffffff;
-	bottom: 100upx;
-	font-size: 14px;
-	.left-content {
-		width: 100%;
-		white-space: pre-wrap;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
-	input {
-		height: 50upx;
-		border: 1px solid #ffffff;
-		padding-left: 10upx;
-		width: 400upx;
-	}
-}
-.avater {
-	position: absolute;
-	bottom: 340upx;
-	right: 0;
-	margin-right: 10upx;
-	border-radius: 40upx;
-	height: 80upx;
-	width: 80upx;
-}
-.aixin {
-	position: absolute;
-	bottom: 260upx;
-	right: 0;
-	margin-right: 10upx;
-}
-.xiaoxi {
-	position: absolute;
-	bottom: 180upx;
-	right: 0;
-	margin-right: 10upx;
-}
-.share {
-	position: absolute;
-	bottom: 100upx;
-	right: 0;
-	margin-right: 10upx;
-}
-.img {
-	height: 80upx;
-	width: 80upx;
-}
-.page {
-	height: 100%;
-	overflow: hidden;
-}
-.controls-title {
-	position: absolute;
-	width: 100%;
-	top: 88%;
-	text-align: left;
-	left: 150rpx;
-	color: #ffffff;
-}
-.controls-price {
-	position: absolute;
-	width: 100%;
-	top: 91%;
-	text-align: left;
-	left: 150rpx;
-	color: #ffffff;
 }
 </style>

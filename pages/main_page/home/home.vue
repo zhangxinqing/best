@@ -309,7 +309,7 @@ export default {
 		tovideo2(e){
 			
 			uni.navigateTo({
-			    url: '/pages/main_page/homelist/detail/detail?title=凡真正的恩典因不完整而美丽'
+			    url: '/pages/video2/index/index'
 			});
 		}
 	},

@@ -56,7 +56,7 @@
 									港
 									<view class="cu-tag badge" :class="Defaulttheam.btncls">99+</view>
 								</view>
-								<view class='cu-avatar xl radius' style="background-image:url(/static/default-skin/big39000.jpg)">
+								<view class='cu-avatar xl radius' @tap="priviewimg" data-img='/static/default-skin/big39000.jpg' style="background-image:url(/static/default-skin/big39000.jpg)">
 									<view class='cu-tag badge' :class="Defaulttheam.btncls">9</view>
 								</view>
 								<view class='cu-avatar xl radius'>
@@ -168,6 +168,26 @@
 					animationType: 'pop-in',
 					animationDuration: 200
 				});
+			},
+			priviewimg(e){
+				let urls=new Array();
+				
+				urls.push(e.currentTarget.dataset.img);
+				console.log(JSON.stringify(urls));
+				// 预览图片
+				        uni.previewImage({
+							current:0,
+				            urls: urls,
+				            longPressActions: {
+				                itemList: ['发送给朋友', '保存图片', '收藏'],
+				                success: function(data) {
+				                    console.log('选中了第' + (data.tapIndex + 1) + '个按钮,第' + (data.index + 1) + '张图片');
+				                },
+				                fail: function(err) {
+				                    console.log(err.errMsg);
+				                }
+				            }
+				        });
 			}
 		},
 	}

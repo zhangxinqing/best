@@ -60,7 +60,8 @@
             }
         },
         "nativePlugins" : {},
-        "usingComponents" : false
+        "usingComponents" : false,
+		"nvueCompiler":"uni-app"
     },
     /* SDK配置 */
     "quickapp" : {},
