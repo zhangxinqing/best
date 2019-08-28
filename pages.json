@@ -39,6 +39,10 @@
 		          }
 		},
 		{
+		    "path" : "pages/main_page/post/image",
+		    "style" : {}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {}
 		},
@@ -138,6 +142,7 @@
 			"path": "pages/plugin/verticalnav",
 			"style": {}
 		}
+        
         
     ],
 	"globalStyle": {

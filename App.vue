@@ -182,7 +182,7 @@
 <style>
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
-
+	@import "colorui/filter.min.css";
 	.nav-list {
 		display: flex;
 		flex-wrap: wrap;

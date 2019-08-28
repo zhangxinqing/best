@@ -31,9 +31,8 @@
 				{{geoadd.address.city}}{{geoadd.address.district}}{{geoadd.address.street}}{{geoadd.address.streetNum}}
 			</view> 
 			<view class="cu-form-group">
-				<map id="gdmap" style="width:100%;height: 300rpx;"></map>
 			</view>
-			<view class="padding"><button class="cu-btn block margin-tb-sm lg" :class="Defaulttheam.btncls" type="">提交</button></view>
+			<view class="padding"><button @tap="toimage" class="cu-btn block margin-tb-sm lg" :class="Defaulttheam.btncls" type="">下一步</button></view>
 			
 		</form>
 		<view class="cu-tabbar-height"></view>
@@ -137,9 +136,9 @@ export default {
 			plus.geolocation.getCurrentPosition(function(res){
 				that.address = JSON.stringify(res);
 				that.geoadd=res;
-				that.gdmapContent=uni.createMapContext("gdmap",that);
+				//that.gdmapContent=uni.createMapContext("gdmap",that);
 				
-				that.gdmapContent.moveToLocation();
+				//that.gdmapContent.moveToLocation();
 				
 			});
 		},
@@ -154,6 +153,11 @@ export default {
 			        console.log('经度：' + res.longitude);
 			    }
 			});
+		},
+		toimage(){
+			uni.navigateTo({
+				url:'/pages/main_page/post/image'
+			})
 		}
 
 	}

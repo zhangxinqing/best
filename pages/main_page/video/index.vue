@@ -3,6 +3,7 @@
 		<view class="video-view">
 			<video
 				class="video"
+				:class="changecls"
 				id="video"
 				:data-id="index"
 				autoplay="true"
@@ -27,6 +28,7 @@
 export default {
 	data() {
 		return {
+			changecls:'',
 			scrollTop: 0,
 			videoCtx: null,
 			listTouchStartY: 0,
@@ -153,6 +155,7 @@ export default {
 			console.log('移动开始位置：' + this.listTouchStartY);
 			console.log('移动位置：' + e.touches[0].pageY);
 			this.listTouchPageY = e.touches[0].pageY;
+			this.changecls="changecls";
 		},
 		// ListTouch计算滚动
 		async ListTouchEnd(e) {
@@ -178,6 +181,7 @@ export default {
 					this.index = this.videoList.length - 1;
 				}
 			}
+			this.changecls="";
 			this.listTouchPageY=0;
 			this.playvideo = this.videoList[this.index];
 			this.videoCtx = uni.createVideoContext(`video`);
@@ -261,4 +265,30 @@ export default {
 	bottom: 0rpx;
 	display: block;
 }
+.imgAnimation{
+
+      animation-name: imgAnimation;
+
+      animation: imgAnimation 2s alternate infinite;
+
+      -webkit-animation: imgAnimation 2s alternate ;
+
+      -moz-animation: imgAnimation 2s alternate ;
+
+ }
+@-webkit-keyframes imgAnimation{
+
+    0%{ top: 0%}
+
+    100%{ top: -150%;}
+
+ }
+@-moz-keyframes imgAnimation{
+
+    0%{ top: 0%}
+
+    100%{ top: -150%;}
+
+ }
+
 </style>
