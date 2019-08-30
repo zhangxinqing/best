@@ -102,7 +102,7 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.2.1",
+      "compilerVersion": "2.2.4",
       "control": "webview",
       "nvueCompiler": "weex",
       "renderer": "auto"

@@ -94,6 +94,7 @@
     },
     "nativePlugins": {},
     "usingComponents": false,
+    "nvueCompiler": "uni-app",
     "arguments": "{\"name\":\"首页\",\"query\":\"\",\"id\":0,\"pathName\":\"pages/main/home\"}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
@@ -103,10 +104,13 @@
       }
     },
     "uni-app": {
-      "compilerVersion": "2.2.3",
+      "compilerVersion": "2.2.4",
       "control": "webview",
-      "nvueCompiler": "weex",
-      "renderer": "auto"
+      "nvueCompiler": "uni-app",
+      "renderer": "auto",
+      "nvue": {
+        "flex-direction": "column"
+      }
     }
   }
 }

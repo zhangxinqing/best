@@ -1,10 +1,47 @@
-.video-view.data-v-58a3010a {
-  position: fixed;
-}
-.controls-play.data-v-58a3010a {
+.controls-box.data-v-58a3010a {
+  background: #ffffff;
   position: absolute;
+  width: 650rpx;
+  height: 200rpx;
   bottom: 90rpx;
   left: 50rpx;
+  border-radius: 10rpx;
+}
+.controls-box-right.data-v-58a3010a {
+  background: #fbbd08;
+  position: absolute;
+  width: 100rpx;
+  height: 200rpx;
+  right: 50rpx;
+  bottom: 90rpx;
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+.controls-box-left.data-v-58a3010a {
+  position: absolute;
+  width: 200rpx;
+  height: 200rpx;
+  left: 50rpx;
+  bottom: 90rpx;
+  border-radius: 10rpx;
+}
+.controls-box-left-pf.data-v-58a3010a {
+  position: absolute;
+  width: 50rpx;
+  left: 255rpx;
+  bottom: 250rpx;
+  font-size: 24rpx;
+  padding-left: 8rpx;
+  border-radius: 10rpx;
+  color: #ffffff;
+  background-color: #5e00ff;
+}
+.controls-box-left-title.data-v-58a3010a {
+  position: absolute;
+  width: 270rpx;
+  left: 320rpx;
+  bottom: 250rpx;
+  font-size: 24rpx;
 }
 .controls-share.data-v-58a3010a {
   right: 50rpx;
@@ -12,6 +49,9 @@
   height: 50rpx;
   top: 10%;
   position: absolute;
+}
+.video-view.data-v-58a3010a {
+  position: fixed;
 }
 .video.data-v-58a3010a {
   width: 100%;
@@ -21,76 +61,19 @@
   bottom: 0rpx;
   display: block;
 }
-.cover-view-left.data-v-58a3010a {
-  position: absolute;
-  margin-left: 10rpx;
-  width: 80%;
-  color: #ffffff;
-  bottom: 100rpx;
-  font-size: 14px;
+.imgAnimation.data-v-58a3010a {
+  -webkit-animation-name: imgAnimation-data-v-58a3010a;
+          animation-name: imgAnimation-data-v-58a3010a;
+  animation: imgAnimation-data-v-58a3010a 2s alternate infinite;
+  -webkit-animation: imgAnimation-data-v-58a3010a 2s alternate;
+  -moz-animation: imgAnimation-data-v-58a3010a 2s alternate;
 }
-.cover-view-left .left-content.data-v-58a3010a {
-    width: 100%;
-    white-space: pre-wrap;
-    -o-text-overflow: ellipsis;
-       text-overflow: ellipsis;
-    overflow: hidden;
+@-webkit-keyframes imgAnimation-data-v-58a3010a {
+0% {
+    top: 0%;
 }
-.cover-view-left input.data-v-58a3010a {
-    height: 50rpx;
-    border: 1px solid #ffffff;
-    padding-left: 10rpx;
-    width: 400rpx;
+100% {
+    top: -150%;
 }
-.avater.data-v-58a3010a {
-  position: absolute;
-  bottom: 340rpx;
-  right: 0;
-  margin-right: 10rpx;
-  border-radius: 40rpx;
-  height: 80rpx;
-  width: 80rpx;
-}
-.aixin.data-v-58a3010a {
-  position: absolute;
-  bottom: 260rpx;
-  right: 0;
-  margin-right: 10rpx;
-}
-.xiaoxi.data-v-58a3010a {
-  position: absolute;
-  bottom: 180rpx;
-  right: 0;
-  margin-right: 10rpx;
-}
-.share.data-v-58a3010a {
-  position: absolute;
-  bottom: 100rpx;
-  right: 0;
-  margin-right: 10rpx;
-}
-.img.data-v-58a3010a {
-  height: 80rpx;
-  width: 80rpx;
-}
-.page.data-v-58a3010a {
-  height: 100%;
-  overflow: hidden;
-}
-.controls-title.data-v-58a3010a {
-  position: absolute;
-  width: 100%;
-  top: 88%;
-  text-align: left;
-  left: 150rpx;
-  color: #ffffff;
-}
-.controls-price.data-v-58a3010a {
-  position: absolute;
-  width: 100%;
-  top: 91%;
-  text-align: left;
-  left: 150rpx;
-  color: #ffffff;
 }
 

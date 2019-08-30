@@ -1,0 +1,40 @@
+
+image {
+	will-change: transform;
+}
+.filterimgbox {
+	width: auto;
+	height: 760rpx;
+	padding: 10rpx;
+}
+.filteritem {
+	width: 200rpx;
+	margin: 10rpx;
+	display: inline-block;
+}
+.moveitem {
+	width: 400rpx;
+	overflow: hidden;
+	top: 50%;
+	left: 30%;
+	color: #ffffff;
+	background-color: #333333;
+	height: 50rpx;
+	line-height: 55rpx;
+	padding: 10rpx;
+	border-radius: 10rpx;
+}
+.mtag1 {
+	top: 20%;
+	left: 30%;
+}
+.mtag2 {
+	top: 70%;
+	left: 30%;
+}
+.scroll-view_H {
+	white-space: nowrap;
+	width: 100%;
+	height: 400rpx;
+}
+

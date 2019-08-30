@@ -9,6 +9,7 @@
     "pages/main_page/homelist/homelist",
     "pages/main_page/homelist/detail/detail",
     "pages/main_page/video/index",
+    "pages/main_page/post/image",
     "pages/index/index",
     "pages/basics/layout",
     "pages/basics/background",
@@ -69,12 +70,12 @@
       }
     ]
   },
-  "nvueCompiler": "weex",
+  "nvueCompiler": "uni-app",
   "renderer": "auto",
   "splashscreen": {
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
   "appname": "best",
-  "compilerVersion": "2.2.3"
+  "compilerVersion": "2.2.4"
 }
